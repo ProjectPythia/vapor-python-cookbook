@@ -1,18 +1,11 @@
-name: cookbook-dev
+name: vapor-cookbook-dev
 channels:
   - conda-forge
 dependencies:
+  - ncar-vapor::vapor
   - jupyter-book
   - jupyterlab
   - jupyter_server
   - pip
-  - python>=3.10
-  - matplotlib
-  - xarray
-  - pandas
-  - intake-esm
-  - fsspec
-  - gcsfs
-  - nc-time-axis
   - pip:
       - sphinx-pythia-theme
