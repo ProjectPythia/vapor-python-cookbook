@@ -14,7 +14,7 @@ parts:
       - file: notebooks/xarray_example
       - file: notebooks/workflow_example
 
-  - caption: Example workflows
-    chapters:
-      - file: notebooks/
-      - file:
+  # - caption: Example workflows
+  #   chapters:
+  #     - file: notebooks/
+  #     - file:
