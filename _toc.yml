@@ -1,6 +1,10 @@
 format: jb-book
 root: README
 parts:
-  - caption: Introduction
+  - caption: Foundations of VAPOR Python
     chapters:
-      - file: notebooks/my-cmip-notebook
+      - file: notebooks/animation_example
+  # - caption: Example workflows
+  #   chapters:
+  #     - file: notebooks/my-cmip-notebook
+  #     - file:
