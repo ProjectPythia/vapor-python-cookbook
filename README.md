@@ -13,7 +13,7 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ## Authors
 
-[Nihanth Cherukuru](@nihanthcw), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+[Nihanth W. Cherukuru](https://github.com/NihanthCW),[Stanislaw 'Stas' Jarosynski](https://github.com/StasJ),[Philip Austin](https://github.com/phaustin)
 
 ### Contributors
 
