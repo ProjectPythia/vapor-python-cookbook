@@ -1,4 +1,4 @@
-<img src="vaporLogoBlack.png" alt="thumbnail" width="300"/>
+<img src="vapor_logo_bg.png" alt="thumbnail" width="100%"/>
 
 # VAPOR Python Cookbook
 
