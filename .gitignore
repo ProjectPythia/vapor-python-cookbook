@@ -1,6 +1,9 @@
 # Default JupyterBook build output dir
 _build/
 
+# Dataset folder (may contain large files)
+notebooks/example_datasets
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
