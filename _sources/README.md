@@ -1,9 +1,8 @@
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
+<img src="vapor_logo_bg.png" alt="thumbnail" width="100%"/>
 
 # VAPOR Python Cookbook
 
 [![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/NihanthCW/vapor-python-cookbook/main?labpath=notebooks)
 
 This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
 
@@ -13,7 +12,7 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ## Authors
 
-[Nihanth Cherukuru](@nihanthcw), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+[Nihanth W. Cherukuru](https://github.com/NihanthCW), [Stanislaw 'Stas' Jarosynski](https://github.com/StasJ), [Philip Austin](https://github.com/phaustin)
 
 ### Contributors
 
@@ -25,34 +24,19 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 (State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
+### VAPOR Foundations
 
 (Add content for this section, e.g., "The foundational content includes ... ")
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
+### Example Workflows
 
 (Add content for this section, e.g., "Example workflows include ... ")
 
 ## Running the Notebooks
 
-You can either run the notebook using [Binder](https://binder.projectpythia.org/) or on your local machine.
-
-### Running on Binder
-
-The simplest way to interact with a Jupyter Notebook is through
-[Binder](https://binder.projectpythia.org/), which enables the execution of a
-[Jupyter Book](https://jupyterbook.org) in the cloud. The details of how this works are not
-important for now. All you need to know is how to launch a Pythia
-Cookbooks chapter via Binder. Simply navigate your mouse to
-the top right corner of the book chapter you are viewing and click
-on the rocket ship icon, (see figure below), and be sure to select
-“launch Binder”. After a moment you should be presented with a
-notebook that you can interact with. I.e. you’ll be able to execute
-and even change the example programs. You’ll see that the code cells
-have no output at first, until you execute them by pressing
-{kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with
-a live Jupyter notebook are described in [Getting Started with
-Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
+```{note}
+VAPOR requires a GPU ... !
+```
 
 ### Running on Your Own Machine
 
