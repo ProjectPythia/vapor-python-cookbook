@@ -1,7 +1,8 @@
-name: cookbook-dev
+name: vapor-cookbook-dev
 channels:
   - conda-forge
 dependencies:
+  - ncar-vapor::vapor
   - jupyter-book
   - jupyterlab
   - jupyter_server
