@@ -30,19 +30,36 @@ This cookbook is broken up into two main sections - "Foundations" and "Example W
 
 ### VAPOR Foundations
 
-(Add content for this section, e.g., "The foundational content includes ... ")
+The foundation section gives a quick overview of the major components of VAPOR python. These include the funcationality to load/read data, set camera parameters, annotations, save animations and images, implementing renderes for data visualization.   
+
+Additionally, the links below can serve as a helpful reference.
+
+::::{grid}
+:gutter: 3
+
+:::{grid-item-card} [Discussion Forum](https://vapor.discourse.group)
+Discussion forum for VAPOR.
+:::
+
+:::{grid-item-card} [Python API Reference](https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/classReference.html)
+Use this to delve deeper into the python classes
+:::
+
+:::{grid-item-card} [VAPOR GUI](https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/quickStartGuide.html)
+GUI version provides a graphical interface for VAPOR
+:::
+
+::::
 
 ### Example Workflows
 
-(Add content for this section, e.g., "Example workflows include ... ")
+The example workflows section provides examples showing and end-end pipeline for analysis and visualization using VAPOR python.
 
 ## Running the Notebooks
 
-```{note}
-VAPOR requires a GPU ... !
-```
+These notebooks cannot be run on Binder at the moment and need to be run on your machine.
 
-### Running on Your Own Machine
+### Running on Your Machine
 
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
