@@ -3,17 +3,17 @@ root: README
 parts:
   - caption: Foundations of VAPOR Python
     chapters:
-      - file: notebooks/camera_example
-      - file: notebooks/animation_example
-      - file: notebooks/annotation_example
-      - file: notebooks/flow_example
-      - file: notebooks/transfer_function_example
-      - file: notebooks/visualizer_widget_example
-      - file: notebooks/numpy_example
       - file: notebooks/dataset_example
+      - file: notebooks/numpy_example
       - file: notebooks/xarray_example
-      - file: notebooks/workflow_example
+      - file: notebooks/camera_example
+      - file: notebooks/transfer_function_example
+      - file: notebooks/annotation_example
+      - file: notebooks/animation_example
+      - file: notebooks/flow_example
+      - file: notebooks/visualizer_widget_example
 
   - caption: Example workflows
     chapters:
+      - file: notebooks/workflow_example
       - file: notebooks/cloudfield_visualizer
