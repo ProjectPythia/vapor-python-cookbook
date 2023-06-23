@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vapor Python Tutorial &#8212; Quick CMIP demo cookbook</title>
+    <title>Generic Workflow &#8212; Quick CMIP demo cookbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Visualize cloud liquid water field" href="cloudfield_visualizer.html" />
-    <link rel="prev" title="Rendering XArray data with Vapor" href="xarray_example.html" />
+    <link rel="prev" title="Visualizer Widgets" href="visualizer_widget_example.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -191,35 +191,10 @@ const thebe_selector_output = ".output, .cell_output"
   Foundations of VAPOR Python
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="camera_example.html">
-   Controlling the Camera
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="animation_example.html">
-   Creating Animations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="annotation_example.html">
-   Annotations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="flow_example.html">
-   Advecting Flow Paths
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="transfer_function_example.html">
-   Transfer Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="visualizer_widget_example.html">
-   Visualizer Widgets
+  <a class="reference internal" href="dataset_example.html">
+   Opening Datasets
   </a>
  </li>
  <li class="toctree-l1">
@@ -228,18 +203,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="dataset_example.html">
-   Opening Datasets
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="xarray_example.html">
    Rendering XArray data with Vapor
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Vapor Python Tutorial
+ <li class="toctree-l1">
+  <a class="reference internal" href="camera_example.html">
+   Controlling the Camera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="transfer_function_example.html">
+   Transfer Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annotation_example.html">
+   Annotations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="animation_example.html">
+   Creating Animations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="flow_example.html">
+   Advecting Flow Paths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualizer_widget_example.html">
+   Visualizer Widgets
   </a>
  </li>
 </ul>
@@ -248,7 +243,12 @@ const thebe_selector_output = ".output, .cell_output"
   Example workflows
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Generic Workflow
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cloudfield_visualizer.html">
    Visualize cloud liquid water field
@@ -330,6 +330,23 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/NihanthCW/vapor-python-cookbook/main?urlpath=lab/tree/notebooks/workflow_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -391,34 +408,22 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vapor-python-tutorial">
-<h1>Vapor Python Tutorial<a class="headerlink" href="#vapor-python-tutorial" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="generic-workflow">
+<h1>Generic Workflow<a class="headerlink" href="#generic-workflow" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <p>This shows an example workflow with vapor.
 We begin by creating a session and opening a dataset.
 You can have multiple sessions open at the same time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
 <span class="kn">from</span> <span class="nn">vapor</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">utils</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.8.3
-Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenGL 4.1 ATI-4.6.21
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">example_utils</span><span class="o">.</span><span class="n">OpenExampleDataset</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -428,7 +433,7 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 <h2>Dump the dataset metadata<a class="headerlink" href="#dump-the-dataset-metadata" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Coordinate Variable Name:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTimeCoordVarName</span><span class="p">())</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Coordinate Variable Name:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTimeCoordVarName</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coordinate Variable Names:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetCoordVarNames</span><span class="p">())</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dimensions:&quot;</span><span class="p">)</span>
@@ -445,37 +450,13 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Coordinate Variable Name: 
-Coordinate Variable Names: [&#39;__regCoord_64_x&#39;, &#39;__regCoord_64_y&#39;, &#39;__regCoord_64_z&#39;]
-Dimensions:
-  __regDim_64: 64
-Data Variables:
-  U10
-    Time Varying: False
-    Dimensionality: 2
-    Coordinates: [&#39;__regCoord_64_x&#39;, &#39;__regCoord_64_y&#39;]
-     Data Range: [-1.9993805885314941, 1.9994730949401855]
-  V10
-    Time Varying: False
-    Dimensionality: 2
-    Coordinates: [&#39;__regCoord_64_x&#39;, &#39;__regCoord_64_y&#39;]
-     Data Range: [-0.2711198925971985, 0.2711198925971985]
-  V
-    Time Varying: False
-    Dimensionality: 3
-    Coordinates: [&#39;__regCoord_64_x&#39;, &#39;__regCoord_64_y&#39;, &#39;__regCoord_64_z&#39;]
-     Data Range: [-0.3319709300994873, 0.3319709300994873]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="render-the-first-2d-variable-as-a-pseudocolor">
 <h2>Render the first 2D variable as a pseudocolor<a class="headerlink" href="#render-the-first-2d-variable-as-a-pseudocolor" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_2d_var</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetDataVarNames</span><span class="p">(</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_2d_var</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetDataVarNames</span><span class="p">(</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering 2D variable </span><span class="si">{</span><span class="n">first_2d_var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">ren</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">TwoDDataRenderer</span><span class="p">)</span>
@@ -490,19 +471,13 @@ Data Variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rendering 2D variable U10
-</pre></div>
-</div>
-<img alt="../_images/2ca20d545858c9a547a25f036be7ae7944babfab7e428b60f87f90bdde669c9d.png" src="../_images/2ca20d545858c9a547a25f036be7ae7944babfab7e428b60f87f90bdde669c9d.png" />
-</div>
 </div>
 </div>
 <div class="section" id="render-u10-and-v10-as-barbs-over-a-map">
 <h2>Render U10 and V10 as barbs over a map<a class="headerlink" href="#render-u10-and-v10-as-barbs-over-a-map" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If your dataset is geo-referenced, this will automatically render a geographically correct map.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If your dataset is geo-referenced, this will automatically render a geographically correct map.</span>
 <span class="c1"># map_ren = data.NewRenderer(renderer.ImageRenderer)</span>
 
 <span class="n">barbs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">BarbRenderer</span><span class="p">)</span>
@@ -515,16 +490,13 @@ Data Variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/02ba7c77083ae3f8ce8fc7501cb85663fc14748a71b5c916df33aa6ab808017b.png" src="../_images/02ba7c77083ae3f8ce8fc7501cb85663fc14748a71b5c916df33aa6ab808017b.png" />
-</div>
 </div>
 </div>
 <div class="section" id="simulate-and-render-a-flow-advection">
 <h2>Simulate and render a flow advection<a class="headerlink" href="#simulate-and-render-a-flow-advection" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flow</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">FlowRenderer</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flow</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">FlowRenderer</span><span class="p">)</span>
 <span class="n">flow</span><span class="o">.</span><span class="n">SetFieldVariableNames</span><span class="p">([</span><span class="s1">&#39;U10&#39;</span><span class="p">,</span> <span class="s1">&#39;V10&#39;</span><span class="p">])</span>
 
 <span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
@@ -533,16 +505,13 @@ Data Variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/3612c22dd363aec59d4ae605302ab90ac342cdc3a8fde8e4c729449b464b5656.png" src="../_images/3612c22dd363aec59d4ae605302ab90ac342cdc3a8fde8e4c729449b464b5656.png" />
-</div>
 </div>
 </div>
 <div class="section" id="volume-render-a-3d-variable">
 <h2>Volume render a 3D variable<a class="headerlink" href="#volume-render-a-3d-variable" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">VolumeRenderer</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">volume</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">VolumeRenderer</span><span class="p">)</span>
 <span class="n">volume</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">)</span>
 
 <span class="n">tf</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">GetPrimaryTransferFunction</span><span class="p">()</span>
@@ -556,10 +525,6 @@ Data Variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/4146bd39638ee86c25ec569a67b9ab2e013889e05b6015a79db329ee518c683c.png" src="../_images/4146bd39638ee86c25ec569a67b9ab2e013889e05b6015a79db329ee518c683c.png" />
-<img alt="../_images/1166bf4a4c53d366a1ba35c02ad86c4c2a6a0d78d7abb47358cad43f9138fc98.png" src="../_images/1166bf4a4c53d366a1ba35c02ad86c4c2a6a0d78d7abb47358cad43f9138fc98.png" />
-</div>
 </div>
 </div>
 <div class="section" id="scale-the-dataset-z-axis">
@@ -568,7 +533,7 @@ Data Variables:
 This can be manually adjusted as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scales</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span><span class="o">.</span><span class="n">GetScales</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scales</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span><span class="o">.</span><span class="n">GetScales</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Default dataset scaling =&quot;</span><span class="p">,</span> <span class="n">scales</span><span class="p">);</span>
 <span class="n">scales</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">0.3</span>
 <span class="n">data</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span><span class="o">.</span><span class="n">SetScales</span><span class="p">(</span><span class="n">scales</span><span class="p">)</span>
@@ -577,27 +542,17 @@ This can be manually adjusted as shown below.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Default dataset scaling = [1.0, 1.0, 1.0]
-New dataset scaling = [1.0, 1.0, 0.3]
-</pre></div>
-</div>
-<img alt="../_images/3cfb24e30fee79ad2d2719227bbd85a7603280685df6527fb0710d519256272c.png" src="../_images/3cfb24e30fee79ad2d2719227bbd85a7603280685df6527fb0710d519256272c.png" />
-</div>
 </div>
 </div>
 <div class="section" id="add-axis-annotations-to-the-rendering">
 <h2>Add axis annotations to the rendering<a class="headerlink" href="#add-axis-annotations-to-the-rendering" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">GetAxisAnnotations</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">GetAxisAnnotations</span><span class="p">()</span>
 <span class="n">annotations</span><span class="o">.</span><span class="n">SetAxisAnnotationEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c1b463ff8da2fe9d6e22e3fd1b804bfbd7772579ace8f7f96b01b916007f6aaf.png" src="../_images/c1b463ff8da2fe9d6e22e3fd1b804bfbd7772579ace8f7f96b01b916007f6aaf.png" />
 </div>
 </div>
 </div>
@@ -611,12 +566,7 @@ it would point to a dataset that does not exist on disk. If you were using a phy
 this would work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">Save</span><span class="p">(</span><span class="s2">&quot;tutorial.vs3&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">Save</span><span class="p">(</span><span class="s2">&quot;tutorial.vs3&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -647,11 +597,11 @@ this would work.</p>
               </div>
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="xarray_example.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="visualizer_widget_example.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Rendering XArray data with Vapor</p>
+            <p class="prev-next-title">Visualizer Widgets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="cloudfield_visualizer.html" title="next page">
@@ -706,7 +656,7 @@ this would work.</p>
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 22 June 2023.
+          Last updated on 23 June 2023.
         </p>
       </div>
     </div>

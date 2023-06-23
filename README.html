@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Controlling the Camera" href="notebooks/camera_example.html" />
+    <link rel="next" title="Opening Datasets" href="notebooks/dataset_example.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -192,33 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/camera_example.html">
-   Controlling the Camera
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/animation_example.html">
-   Creating Animations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/annotation_example.html">
-   Annotations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/flow_example.html">
-   Advecting Flow Paths
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/transfer_function_example.html">
-   Transfer Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/visualizer_widget_example.html">
-   Visualizer Widgets
+  <a class="reference internal" href="notebooks/dataset_example.html">
+   Opening Datasets
   </a>
  </li>
  <li class="toctree-l1">
@@ -227,18 +202,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/dataset_example.html">
-   Opening Datasets
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="notebooks/xarray_example.html">
    Rendering XArray data with Vapor
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/workflow_example.html">
-   Vapor Python Tutorial
+  <a class="reference internal" href="notebooks/camera_example.html">
+   Controlling the Camera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/transfer_function_example.html">
+   Transfer Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/annotation_example.html">
+   Annotations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/animation_example.html">
+   Creating Animations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/flow_example.html">
+   Advecting Flow Paths
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/visualizer_widget_example.html">
+   Visualizer Widgets
   </a>
  </li>
 </ul>
@@ -248,6 +243,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/workflow_example.html">
+   Generic Workflow
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/cloudfield_visualizer.html">
    Visualize cloud liquid water field
@@ -379,8 +379,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-on-your-own-machine">
-     Running on Your Own Machine
+    <a class="reference internal nav-link" href="#running-on-your-machine">
+     Running on Your Machine
     </a>
    </li>
   </ul>
@@ -396,61 +396,93 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <a class="reference internal image-reference" href="_images/vapor_logo_bg.png"><img alt="thumbnail" src="_images/vapor_logo_bg.png" style="width: 100%;" /></a>
+  <a class="reference internal image-reference" href="_images/vapor_logo_bg.png"><img alt="vapor logo in front of a wildfire data visualization" src="_images/vapor_logo_bg.png" style="width: 100%;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="vapor-python-cookbook">
 <h1>VAPOR Python Cookbook<a class="headerlink" href="#vapor-python-cookbook" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <p><a class="reference external" href="https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg" /></a></p>
-<p>This Project Pythia Cookbook covers … (replace <code class="docutils literal notranslate"><span class="pre">...</span></code> with the main subject of your cookbook … e.g., <em>working with radar data in Python</em>)</p>
+<p>This Project Pythia Cookbook provides an overview of the VAPOR Python API with example workflows.</p>
 <div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>(Add a few sentences stating why this cookbook will be useful. What skills will you, “the chef”, gain once you have reached the end of the cookbook?)</p>
+<p>The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers (VAPOR) provides an interactive 3D visualization environment for exploratory visual analysis and the production of captivating animations and high-quality images. VAPOR runs on most UNIX and Windows systems equipped with modern 3D graphics cards.</p>
 </div>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p><a class="reference external" href="https://github.com/NihanthCW">Nihanth W. Cherukuru</a>, <a class="reference external" href="https://github.com/StasJ">Stanislaw ‘Stas’ Jarosynski</a>, <a class="reference external" href="https://github.com/phaustin">Philip Austin</a></p>
 <div class="section" id="contributors">
 <h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<a href="https://github.com/ProjectPythia/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythia/cookbook-template" />
+<a href="https://github.com/NCAR/VAPOR/graphs/contributors">
+  <img src="https://github.com/StasJ.png" width="8%" style="border-radius: 50%" />
+  <img src="https://github.com/sgpearse.png" width="8%" style="border-radius: 50%" />
+  <img src="https://github.com/shaomeng.png" width="8%" style="border-radius: 50%" />
+  <img src="https://github.com/clyne.png" width="8%" style="border-radius: 50%" />
+  <img src="https://github.com/NihanthCW.png" width="8%" style="border-radius: 50%" />
 </a>
 </div>
 </div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>(State one or more sections that will comprise the notebook. E.g., <em>This cookbook is broken up into two main sections - “Foundations” and “Example Workflows.”</em> Then, describe each section below.)</p>
+<p>This cookbook is broken up into two main sections - “Foundations” and “Example Workflows”. It is not necessary to go through these sections sequentially. Start with “Example Workflows” if you’d like to see VAPOR in action and get a broad overview of a workflow or start with “Foundations” if you’d like to explore the functionality/options in detail.</p>
 <div class="section" id="vapor-foundations">
 <h3>VAPOR Foundations<a class="headerlink" href="#vapor-foundations" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “The foundational content includes … “)</p>
+<p>The foundation section gives a quick overview of the major components of VAPOR python. These include the funcationality to load/read data, set camera parameters, annotations, save animations and images, implementing renderes for data visualization.</p>
+<p>Additionally, the links below can serve as a helpful reference.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://vapor.discourse.group">Discussion Forum</a></div>
+<p class="sd-card-text">Discussion forum for VAPOR.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/classReference.html">Python API Reference</a></div>
+<p class="sd-card-text">Use this to delve deeper into the python classes</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/quickStartGuide.html">VAPOR GUI</a></div>
+<p class="sd-card-text">GUI version provides a graphical interface for VAPOR</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="example-workflows">
 <h3>Example Workflows<a class="headerlink" href="#example-workflows" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “Example workflows include … “)</p>
+<p>The example workflows section provides examples showing and end-end pipeline for analysis and visualization using VAPOR python.</p>
 </div>
 </div>
 <div class="section" id="running-the-notebooks">
 <h2>Running the Notebooks<a class="headerlink" href="#running-the-notebooks" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>VAPOR requires a GPU … !</p>
-</div>
-<div class="section" id="running-on-your-own-machine">
-<h3>Running on Your Own Machine<a class="headerlink" href="#running-on-your-own-machine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>These notebooks cannot be run on Binder at the moment and need to be run on your machine.</p>
+<div class="section" id="running-on-your-machine">
+<h3>Running on Your Machine<a class="headerlink" href="#running-on-your-machine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>If you are interested in running this material locally on your computer, you will need to follow this workflow:</p>
-<p>(Replace “cookbook-example” with the title of your cookbooks)</p>
 <ol class="arabic">
-<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/ProjectPythia/cookbook-example</span></code> repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ProjectPythia/cookbook-example.git
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/ProjectPythia/vapor-python-cookbook</span></code> repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ProjectPythia/vapor-python-cookbook.git
 </pre></div>
 </div>
 </li>
-<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">cookbook-example</span></code> directory</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>cookbook-example
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">vapor-python-cookbook</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>vapor-python-cookbook
 </pre></div>
 </div>
 </li>
 <li><p>Create and activate your conda environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
-conda<span class="w"> </span>activate<span class="w"> </span>cookbook-example
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>vapor_environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>vapor-cookbook-dev
 </pre></div>
 </div>
 </li>
@@ -461,6 +493,7 @@ jupyter<span class="w"> </span>lab
 </div>
 </li>
 </ol>
+<p>At this point, you can interact with the notebooks! Make sure to check out the “<a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-jupyter.html">Getting Started with Jupyter</a>” content from the <a class="reference external" href="https://foundations.projectpythia.org/landing-page.html">Pythia Foundations</a> material if you are new to Jupyter or need a refresher.</p>
 </div>
 </div>
 <div class="toctree-wrapper compound">
@@ -492,10 +525,10 @@ jupyter<span class="w"> </span>lab
               </div>
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="notebooks/camera_example.html" title="next page">
+    <a class='right-next' id="next-link" href="notebooks/dataset_example.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Controlling the Camera</p>
+        <p class="prev-next-title">Opening Datasets</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -544,7 +577,7 @@ jupyter<span class="w"> </span>lab
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 22 June 2023.
+          Last updated on 23 June 2023.
         </p>
       </div>
     </div>
