@@ -1,0 +1,10 @@
+thumbnail: thumbnail.png
+tags:
+  domains:
+    - weather
+    - climate
+    - 3D visualizations
+    - particles
+  packages:
+    - xarray
+    - numpy

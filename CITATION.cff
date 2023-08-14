@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this cookbook, please cite it as below."
+authors:
+  # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
+  - family-names: Cherukuru
+    given-names: Nihanth
+    website: https://github.com/NihanthCW # optional
+    affiliation: National Center for Atmospheric Research # optional
+  - family-names: Jarosynski
+    given-names: Stanislaw 'Stas'
+    website: https://github.com/StasJ # optional
+    affiliation: National Center for Atmospheric Research # optional
+  - family-names: Austin
+    given-names: Philip
+    website: https://github.com/phaustin # optional
+    affiliation: University of British Columbia # optional
+  - name: "VAPOR python cookbook contributors" # use the 'name' field to acknowledge organizations
+    website: "https://github.com/ProjectPythia/vapor-python-cookbook/graphs/contributors"
+title: "This Cookbook"
+abstract: "The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers (VAPOR) provides an interactive 3D visualization environment for exploratory visual analysis and the production of captivating animations and high-quality images. VAPOR runs on most UNIX and Windows systems equipped with modern 3D graphics cards. "
