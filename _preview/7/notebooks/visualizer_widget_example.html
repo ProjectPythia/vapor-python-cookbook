@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizer Widgets &#8212; Quick CMIP demo cookbook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"112085df108f46bebdfcb864a9cf1fcf": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2567773354914a73814d12ffff3bb409": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3e26236bc76e43218f70dca961e2dff8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "45c3938894364cb9ae7ed64ec25b45c8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "LabelStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "8f28c7776a734095bbefaa9cf93ab3f3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_9be227e8aaef497ab3bb1030a11bcb65", "IPY_MODEL_d7f202bf103a4c03be41869256f8613d"], "layout": "IPY_MODEL_954f7385cd924f8cb7767c88ad6b4223", "tabbable": null, "tooltip": null}}, "904a361fbc14464abaa7b9c018264c65": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "VBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_b4c9cd9333294bbfbaf4918ea8b1a4dd", "IPY_MODEL_8f28c7776a734095bbefaa9cf93ab3f3"], "layout": "IPY_MODEL_2567773354914a73814d12ffff3bb409", "tabbable": null, "tooltip": null}}, "954f7385cd924f8cb7767c88ad6b4223": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9be227e8aaef497ab3bb1030a11bcb65": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "LabelModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "LabelView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_b243602aa54445deb2d798d9d7cae0a2", "placeholder": "\u200b", "style": "IPY_MODEL_45c3938894364cb9ae7ed64ec25b45c8", "tabbable": null, "tooltip": null, "value": "Iso value:"}}, "b243602aa54445deb2d798d9d7cae0a2": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b4c9cd9333294bbfbaf4918ea8b1a4dd": {"model_module": "jupyter-vapor-widget", "model_module_version": "^1.0", "model_name": "VaporVisualizerModel", "state": {"_dom_classes": [], "_model_module": "jupyter-vapor-widget", "_model_module_version": "^1.0", "_model_name": "VaporVisualizerModel", "_view_count": null, "_view_module": "jupyter-vapor-widget", "_view_module_version": "^1.0", "_view_name": "VaporVisualizerView", "imageData": "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oA5+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK6Dw9/yA/Fn/YKj/8AS21rn66Dw9/yA/Fn/YKj/wDS21oA5+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAOg8Q/8AID8J/wDYKk/9LbqijxD/AMgPwn/2CpP/AEtuqKADw9/yA/Fn/YKj/wDS21rn66Dw9/yA/Fn/AGCo/wD0tta5+gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACug8Q/8gPwn/wBgqT/0tuq5+ug8Q/8AID8J/wDYKk/9LbqgDn6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAroPD3/ID8Wf9gqP/wBLbWufroPD3/ID8Wf9gqP/ANLbWgDn6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA6DxD/wAgPwn/ANgqT/0tuqKPEP8AyA/Cf/YKk/8AS26ooAPD3/ID8Wf9gqP/ANLbWufroPD3/ID8Wf8AYKj/APS21rn6ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK6DxD/yA/Cf/AGCpP/S26rn66DxD/wAgPwn/ANgqT/0tuqAOfooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACug8Pf8gPxZ/2Co//AEtta5+ug8Pf8gPxZ/2Co/8A0ttaAOfooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDoPEP/ACA/Cf8A2CpP/S26oo8Q/wDID8J/9gqT/wBLbqigA8Pf8gPxZ/2Co/8A0tta5+ug8Pf8gPxZ/wBgqP8A9LbWufoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAroPEP/ID8J/8AYKk/9LbqufroPEP/ACA/Cf8A2CpP/S26oA5+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig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", "imageFormat": "jpeg", "layout": "IPY_MODEL_b72da1c0e1214d0d9bb7349dec472a6f", "mouseButton": 1, "mouseDown": false, "mousePos": [0, 0], "resolution": [600, 480], "tabbable": null, "tooltip": null, "value": "Visualizer is here"}}, "b72da1c0e1214d0d9bb7349dec472a6f": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d7f202bf103a4c03be41869256f8613d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "FloatSliderModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_112085df108f46bebdfcb864a9cf1fcf", "max": 0.3319709300994873, "min": -0.3319709300994873, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.0066394186019897465, "style": "IPY_MODEL_3e26236bc76e43218f70dca961e2dff8", "tabbable": null, "tooltip": null, "value": 0.1}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Generic Workflow" href="workflow_example.html" />
+    <link rel="prev" title="Advecting Flow Paths" href="flow_example.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T52X8HNYE8"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-T52X8HNYE8');
+                </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
+    <div class="container-fluid" id="shim"></div>
+    <div class="container-fluid" id="banner"></div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="https://projectpythia.org">
+  <img src="../_static/pythia_logo-white-rtext.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org">Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://foundations.projectpythia.org">Foundations</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/index.html#join-us">Community</a>
+  </li>
+  
+  
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/ProjectPythia" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    <div class="container-xl">
+      <div class="row">
+        
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   VAPOR Python Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preamble
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="how-to-cite.html">
+   How to Cite This Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of VAPOR Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_example.html">
+   Opening Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy_example.html">
+   Rendering Numpy data with Vapor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xarray_example.html">
+   Rendering XArray data with Vapor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="camera_example.html">
+   Controlling the Camera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="transfer_function_example.html">
+   Transfer Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annotation_example.html">
+   Annotations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="animation_example.html">
+   Creating Animations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="flow_example.html">
+   Advecting Flow Paths
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Visualizer Widgets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Example workflows
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflow_example.html">
+   Generic Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cloudfield_visualizer.html">
+   Visualizing the cloud-capped boundary layer
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by <a href="https://projectpythia.org">Project Pythia</a>.<br><br>
+All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 (CC BY 4.0)</a>.<br><br>
+
+</div>
+
+</div>
+
+        
+
+        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/visualizer_widget_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NihanthCW/vapor-python-cookbook/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NihanthCW/vapor-python-cookbook//issues/new?title=Issue%20on%20page%20%2Fnotebooks/visualizer_widget_example.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NihanthCW/vapor-python-cookbook/edit/main/notebooks/visualizer_widget_example.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#render-an-iso-surface">
+   Render an Iso Surface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-visualizer-to-explore-the-scene">
+   Create a visualizer to explore the scene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-an-interactive-iso-value-slider-using-ipywidgets">
+   Add an interactive iso value slider using
+   <strong>
+    ipywidgets
+   </strong>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+          <div id="main-content" class="row">
+            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+              
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="visualizer-widgets">
+<h1>Visualizer Widgets<a class="headerlink" href="#visualizer-widgets" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<p>Visualizer widgets allow you to interactively explore a session as you would in a Vapor GUI visualizer.
+This notebook shows how to use visualizer widgets and how to add additional dynamic parameter inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
+<span class="kn">from</span> <span class="nn">vapor</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">camera</span>
+
+<span class="n">ses</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">example_utils</span><span class="o">.</span><span class="n">OpenExampleDataset</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.8.3
+Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenGL 4.1 ATI-4.6.21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="render-an-iso-surface">
+<h2>Render an Iso Surface<a class="headerlink" href="#render-an-iso-surface" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ren</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">VolumeIsoRenderer</span><span class="p">)</span>
+<span class="n">ren</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">GetDataVarNames</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Set to first 2D data variable</span>
+<span class="n">ren</span><span class="o">.</span><span class="n">SetIsoValues</span><span class="p">([</span><span class="n">ren</span><span class="o">.</span><span class="n">GetIsoValues</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">])</span>
+
+<span class="n">ses</span><span class="o">.</span><span class="n">GetCamera</span><span class="p">()</span><span class="o">.</span><span class="n">ViewAll</span><span class="p">()</span>
+<span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" src="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" />
+</div>
+</div>
+</div>
+<div class="section" id="create-a-visualizer-to-explore-the-scene">
+<h2>Create a visualizer to explore the scene<a class="headerlink" href="#create-a-visualizer-to-explore-the-scene" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>Try dragging the image to rotate the view.
+Hover over the visualizer to see the full controls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyter_vapor_widget</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">viz</span> <span class="o">=</span> <span class="n">VaporVisualizerWidget</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
+<span class="n">viz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b4c9cd9333294bbfbaf4918ea8b1a4dd", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</div>
+<div class="section" id="add-an-interactive-iso-value-slider-using-ipywidgets">
+<h2>Add an interactive iso value slider using <strong>ipywidgets</strong><a class="headerlink" href="#add-an-interactive-iso-value-slider-using-ipywidgets" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span> <span class="o">=</span> <span class="n">ren</span><span class="o">.</span><span class="n">GetPrimaryTransferFunction</span><span class="p">()</span>
+<span class="n">dataRange</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">GetMinMaxMapValue</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">sliderChanged</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">ren</span><span class="o">.</span><span class="n">SetIsoValues</span><span class="p">([</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">])</span>
+    <span class="n">viz</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">ren</span><span class="o">.</span><span class="n">GetIsoValues</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">min</span><span class="o">=</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">max</span><span class="o">=</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="p">(</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">sliderChanged</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">viz</span><span class="p">,</span>
+    <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">&quot;Iso value:&quot;</span><span class="p">),</span> <span class="n">slider</span><span class="p">])</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "904a361fbc14464abaa7b9c018264c65", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="flow_example.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Advecting Flow Paths</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="workflow_example.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Generic Workflow</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+<footer class="footer">
+  <div class="container-fluid m-0 p-0">
+  
+    <div class="footer-item">
+    
+  <div class="container-fluid footer-logos">
+    <div class="container-xl">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="NCAR" src="../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Unidata" src="../_images/Unidata_logo_horizontal_1200x300.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="UAlbany" src="../_images/UAlbany-A2-logo-purple-gold.svg" style="width: 100%">
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+    <div class="footer-item">
+      <div class="container-fluid footer-info">
+    <div class="container-xl">
+      <div class="d-flex justify-content-center">
+        <p class="py-1 m-0">
+            &copy;&nbsp;2023.
+        
+          By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
+        
+          Last updated on 14 August 2023.
+        </p>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+  </div>
+</footer>
+  </body>
+</html>
