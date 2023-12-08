@@ -54,8 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generic Workflow" href="workflow_example.html" />
-    <link rel="prev" title="Visualizer Widgets" href="visualizer_widget_example.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -255,12 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
   Example workflows
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Set “homeDir” to example data directory
-  </a>
- </li>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="workflow_example.html">
    Generic Workflow
@@ -462,8 +455,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#manipulate-a-renderer-with-an-interactive-slider">
-   Manipulate a Renderer with an interactive slider
+  <a class="reference internal nav-link" href="#interactive-sliders-open-visualizer-widget-example-ipynb">
+   Interactive Sliders - Open visualizer_widget_example.ipynb
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -504,7 +497,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <h1><a class="reference external" href="https://drive.google.com/file/d/1ROJ4lSDjiZPy_iUefTFc372kOoLnr9aL/view?usp=sharing">Download example data here</a><a class="headerlink" href="#download-example-data-here" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">homeDir</span> <span class="o">=</span> <span class="s2">&quot;/Users/pearse/Examples/AGU2023&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#homeDir = &quot;/Users/pearse/Examples/AGU2023&quot;</span>
+<span class="n">homeDir</span> <span class="o">=</span> <span class="s2">&quot;/Users/pearse/Downloads/AGU2023&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -778,15 +772,15 @@ class Session(cppyy.gbl.Session)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_12:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_17:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_10:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_18:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_15:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_16:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_13:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_14:00:00.slab
-/Users/pearse/Examples/AGU2023/data/wrfout_met_d02_2020-10-22_11:00:00.slab
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_12:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_17:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_10:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_18:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_15:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_16:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_13:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_14:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_11:00:00.slab
 </pre></div>
 </div>
 </div>
@@ -924,7 +918,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "99c70d86e9df44c3bd166afd0c9f7bb5", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="show-a-transfer-function">
@@ -963,13 +957,13 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span> <span class="o">=</span> <span class="n">ren</span><span class="o">.</span><span class="n">GetPrimaryTransferFunction</span><span class="p">()</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">SetOpacityControlPoints</span><span class="p">(</span><span class="n">opacities</span><span class="p">)</span>
-<span class="c1">#viz = VaporVisualizerWidget(ses)</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
 <span class="n">viz</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "99c70d86e9df44c3bd166afd0c9f7bb5", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="load-a-builtin-transfer-function">
@@ -977,12 +971,13 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">LoadBuiltinColormap</span><span class="p">(</span><span class="s2">&quot;Sequential/BlackBody&quot;</span><span class="p">)</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
 <span class="n">viz</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "99c70d86e9df44c3bd166afd0c9f7bb5", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="load-a-transfer-function-that-was-configured-in-vapor">
@@ -990,103 +985,17 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">LoadColormapFromFile</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/fireArea.tf3&quot;</span><span class="p">)</span>
+<span class="n">viz</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
 <span class="n">viz</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "99c70d86e9df44c3bd166afd0c9f7bb5", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="manipulate-a-renderer-with-an-interactive-slider">
-<h1>Manipulate a Renderer with an interactive slider<a class="headerlink" href="#manipulate-a-renderer-with-an-interactive-slider" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new SliceRenderer</span>
-
-<span class="kn">import</span> <span class="nn">example_utils</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ses</span><span class="o">.</span><span class="n">GetDatasets</span><span class="p">())</span>
-<span class="n">ren</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">SliceRenderer</span><span class="p">,</span> <span class="n">ses</span><span class="o">.</span><span class="n">GetDatasetNames</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1">#ses.Save(&quot;/Users/pearse/Examples/eastTroublesome/slider.vs3&quot;)</span>
-<span class="c1">#viz2 = VaporVisualizerWidget(ses)</span>
-<span class="c1">#viz2</span>
-<span class="n">viz</span>
-<span class="c1">#ses.Show()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Dataset(&quot;wrfout_met_d02_2020-10-22_12_00_00.slab&quot;)]
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rotate the Slice, and get the range of values that our slider will operate within</span>
-
-<span class="n">ren</span><span class="o">.</span><span class="n">SetXSlicePlaneRotation</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">extents</span> <span class="o">=</span> <span class="n">ren</span><span class="o">.</span><span class="n">GetRenderRegion</span><span class="p">()</span><span class="o">.</span><span class="n">GetExtents</span><span class="p">()</span> <span class="c1"># [[minX, minY, minZ], [maxX, maxY, maxZ]]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">extents</span><span class="p">)</span>
-<span class="n">minY</span> <span class="o">=</span> <span class="n">extents</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">maxY</span> <span class="o">=</span> <span class="n">extents</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">yRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxY</span><span class="o">-</span><span class="n">minY</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-<span class="c1">#viz2</span>
-<span class="n">viz</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([-51081.44140625, 4795527.0, 2244.771240234375], [16991.9296875, 4847354.0, 5416.5927734375])
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ac1efddd00945d4bc523bed37da1152", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">Save</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/slider.vs3&quot;</span><span class="p">)</span>
-<span class="n">steps</span><span class="o">=</span><span class="mi">50</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
-    <span class="n">ren</span><span class="o">.</span><span class="n">SetSliceOffset</span><span class="p">(</span><span class="n">minY</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">yRange</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="n">steps</span><span class="p">)</span>
-    <span class="n">ses</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/captures/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a function that will trigger when the slider is modified</span>
-
-<span class="n">viz2</span> <span class="o">=</span> <span class="n">VaporVisualizerWidget</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">sliderChanged</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
-    <span class="n">ren</span><span class="o">.</span><span class="n">SetSliceOffset</span><span class="p">([</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">])</span>
-    <span class="c1">#viz.Render(fast=True)</span>
-    <span class="n">viz2</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">ren</span><span class="o">.</span><span class="n">GetSliceOffset</span><span class="p">(),</span> <span class="nb">min</span><span class="o">=-</span><span class="n">yRange</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">yRange</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="p">(</span><span class="n">yRange</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">sliderChanged</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the slider to a vertical set of widgets that also contains the interactive visualizer</span>
-
-<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
-    <span class="n">viz2</span><span class="p">,</span>
-    <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">&quot;Y coordinate:&quot;</span><span class="p">),</span> <span class="n">slider</span><span class="p">])</span>
-<span class="p">])</span>
-<span class="n">viz2</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
-<span class="n">viz2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c95fedaf439e4704afa23a58bb482d15", "version_major": 2, "version_minor": 0}</script></div>
-</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="interactive-sliders-open-visualizer-widget-example-ipynb">
+<h1>Interactive Sliders - Open visualizer_widget_example.ipynb<a class="headerlink" href="#interactive-sliders-open-visualizer-widget-example-ipynb" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="back-to-vapor-for-dvr-and-python-engine">
 <h1>*** Back to VAPOR for DVR and Python Engine ***<a class="headerlink" href="#back-to-vapor-for-dvr-and-python-engine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
@@ -1097,7 +1006,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="kn">from</span> <span class="nn">vapor.animation</span> <span class="kn">import</span> <span class="n">Animation</span>
-<span class="n">ses</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/Examples/eastTroublesome/et_1.vs3&quot;</span><span class="p">)</span>
+<span class="n">ses</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/et_1.vs3&quot;</span><span class="p">)</span>
 <span class="n">anim</span> <span class="o">=</span> <span class="n">Animation</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
 <span class="n">timesteps</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">GetTimesteps</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">):</span>
@@ -1126,7 +1035,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 
 <span class="n">ses1</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="c1">#ses1.Load(&quot;/Users/pearse/Examples/eastTroublesome/et_1.vs3&quot;)</span>
-<span class="n">ses1</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/Examples/eastTroublesome/et_1.vs3&quot;</span><span class="p">)</span>
+<span class="n">ses1</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/et_1.vs3&quot;</span><span class="p">)</span>
 <span class="c1">#ses1.Load(&quot;~/Examples/eastTroublesome/et_1.vs3&quot;)</span>
 
 <span class="n">cam1</span> <span class="o">=</span> <span class="n">ses1</span><span class="o">.</span><span class="n">GetCamera</span><span class="p">()</span>
@@ -1142,7 +1051,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acquire the camera settings from a secondary session file that we will transition into</span>
 
 <span class="n">ses2</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-<span class="n">ses2</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/Examples/eastTroublesome/et_2.vs3&quot;</span><span class="p">)</span>
+<span class="n">ses2</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/et_2.vs3&quot;</span><span class="p">)</span>
 <span class="n">cam2</span> <span class="o">=</span> <span class="n">ses2</span><span class="o">.</span><span class="n">GetCamera</span><span class="p">()</span>
 <span class="n">dir2</span> <span class="o">=</span> <span class="n">cam2</span><span class="o">.</span><span class="n">GetDirection</span><span class="p">()</span>
 <span class="n">pos2</span> <span class="o">=</span> <span class="n">cam2</span><span class="o">.</span><span class="n">GetPosition</span><span class="p">()</span>
@@ -1197,7 +1106,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
         <span class="n">up1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">dUpZ</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="n">steps</span>
     <span class="p">]</span>
     <span class="n">cam1</span><span class="o">.</span><span class="n">SetUp</span><span class="p">(</span> <span class="n">up</span> <span class="p">)</span>
-    <span class="n">ses1</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/Examples/eastTroublesome/captures/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span>
+    <span class="n">ses1</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;captures/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1221,7 +1130,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure various parameters for rotating the camera around the scene</span>
-<span class="n">session_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/pearse/Examples/eastTroublesome/et_2.vs3&quot;</span>
+<span class="n">session_path</span> <span class="o">=</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/et_2.vs3&quot;</span>
 <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;rotation.mp4&quot;</span>
 <span class="n">video_framerate</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">video_resolution</span> <span class="o">=</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
@@ -1308,21 +1217,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="visualizer_widget_example.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Visualizer Widgets</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="workflow_example.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generic Workflow</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             </div>
           </div>
