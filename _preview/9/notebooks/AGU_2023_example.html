@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Opening Datasets" href="dataset_example.html" />
+    <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -201,7 +203,12 @@ const thebe_selector_output = ".output, .cell_output"
   Foundations of VAPOR Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Set “homeDir” to example data directory
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dataset_example.html">
    Opening Datasets
@@ -513,6 +520,16 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.0
+Python 3.9.18 (/Users/pearse/miniconda3/envs/3.9.1)
+OpenGL 4.1 Metal - 83.1
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="find-documentation">
@@ -525,6 +542,221 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <span class="c1"># Camera    - help(camera.Camera)</span>
 <span class="c1"># Animation - help(animation.Amimation)</span>
 <span class="c1"># https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/classReference.html</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class Session in module vapor.session:
+
+class Session(cppyy.gbl.Session)
+ |  Method resolution order:
+ |      Session
+ |      cppyy.gbl.Session
+ |      cppyy.gbl.CPPInstance
+ |      builtins.object
+ |  
+ |  Methods defined here:
+ |  
+ |  CreatePythonDataset(self)
+ |      Creates a python dataset or returns one if it already exists for the current session.
+ |  
+ |  DeleteRenderer(self, renderer: vapor.renderer.Renderer)
+ |      void Session::DeleteRenderer(String name)
+ |  
+ |  GetAxisAnnotations(self) -&gt; vapor.annotations.AxisAnnotation
+ |  
+ |  GetCamera(self)
+ |  
+ |  GetDataset(self, name) -&gt; vapor.dataset.Dataset
+ |  
+ |  GetDatasets(self)
+ |  
+ |  GetRenderer(self, name)
+ |  
+ |  GetRenderers(self) -&gt; list[vapor.renderer.Renderer]
+ |  
+ |  GetSceneAnnotations(self) -&gt; vapor.annotations.SceneAnnotation
+ |  
+ |  NewRenderer(self, Class: vapor.renderer.Renderer, datasetName: str) -&gt; vapor.renderer.Renderer
+ |      std::string Session::NewRenderer(String type, String dataset = &quot;&quot;)
+ |  
+ |  OpenDataset(self, datasetType: str, files: list[str])
+ |      Open a dataset of type datasetType from a list of files.
+ |      A list of supported dataset types can be retrieved from Dataset.GetDatasetTypes()
+ |  
+ |  RenderToImage(self, fast=False) -&gt; &lt;module &#39;PIL.Image&#39; from &#39;/Users/pearse/miniconda3/envs/3.9.1/lib/python3.9/site-packages/PIL/Image.py&#39;&gt;
+ |  
+ |  SetResolution(self, width, height)
+ |  
+ |  Show(self)
+ |  
+ |  __init__(self)
+ |      Session::Session()
+ |      Session::Session(const Session&amp;)
+ |  
+ |  getAnimationParams(...)
+ |      AnimationParams* __cppyy_internal::Dispatcher1::getAnimationParams()
+ |  
+ |  getGUIStateParams(...)
+ |      GUIStateParams* __cppyy_internal::Dispatcher1::getGUIStateParams()
+ |  
+ |  getParamsDatasetInfo(...)
+ |      void __cppyy_internal::Dispatcher1::getParamsDatasetInfo(std::string arg0, std::string* arg1, std::vector&lt;std::string&gt;* arg2)
+ |  
+ |  getSettingsParams(...)
+ |      SettingsParams* __cppyy_internal::Dispatcher1::getSettingsParams()
+ |  
+ |  getWinName(...)
+ |      std::string __cppyy_internal::Dispatcher1::getWinName()
+ |  
+ |  loadAllParamsDatasets(...)
+ |      void __cppyy_internal::Dispatcher1::loadAllParamsDatasets()
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __cpp_cross__ = &#39;Session&#39;
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from cppyy.gbl.Session:
+ |  
+ |  CloseAllDatasets(...)
+ |      void Session::CloseAllDatasets()
+ |  
+ |  CloseDataset(...)
+ |      void Session::CloseDataset(String name)
+ |  
+ |  GetDatasetNames(...)
+ |      std::vector&lt;std::string&gt; Session::GetDatasetNames()
+ |  
+ |  GetPythonWinName(...)
+ |      std::string Session::GetPythonWinName()
+ |  
+ |  GetRendererNames(...)
+ |      std::vector&lt;std::string&gt; Session::GetRendererNames()
+ |  
+ |  GetTimesteps(...)
+ |      int Session::GetTimesteps()
+ |  
+ |  Load(...)
+ |      int Session::Load(String path)
+ |  
+ |  Render(...)
+ |      int Session::Render(String imagePath, bool fast = false)
+ |  
+ |  Reset(...)
+ |      void Session::Reset()
+ |  
+ |  Save(...)
+ |      int Session::Save(String path)
+ |  
+ |  SetTimestep(...)
+ |      void Session::SetTimestep(int ts)
+ |  
+ |  SetWaspMyBaseErrMsgFilePtrToSTDERR(...)
+ |      static void Session::SetWaspMyBaseErrMsgFilePtrToSTDERR()
+ |  
+ |  __assign__(...)
+ |      Session&amp; Session::operator=(const Session&amp;)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from cppyy.gbl.Session:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from cppyy.gbl.CPPInstance:
+ |  
+ |  __add__(self, value, /)
+ |      Return self+value.
+ |  
+ |  __bool__(self, /)
+ |      True if self else False
+ |  
+ |  __destruct__(...)
+ |      call the C++ destructor
+ |  
+ |  __dispatch__(...)
+ |      dispatch to selected overload
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |  
+ |  __getitem__(...)
+ |      pointer dereferencing
+ |  
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |  
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |  
+ |  __invert__(self, /)
+ |      ~self
+ |  
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |  
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |  
+ |  __mul__(self, value, /)
+ |      Return self*value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __neg__(self, /)
+ |      -self
+ |  
+ |  __pos__(self, /)
+ |      +self
+ |  
+ |  __radd__(self, value, /)
+ |      Return value+self.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __rmul__(self, value, /)
+ |      Return value*self.
+ |  
+ |  __rsub__(self, value, /)
+ |      Return value-self.
+ |  
+ |  __rtruediv__(self, value, /)
+ |      Return value/self.
+ |  
+ |  __smartptr__(...)
+ |      get associated smart pointer, if any
+ |  
+ |  __str__(self, /)
+ |      Return str(self).
+ |  
+ |  __sub__(self, value, /)
+ |      Return self-value.
+ |  
+ |  __truediv__(self, value, /)
+ |      Return self/value.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from cppyy.gbl.CPPInstance:
+ |  
+ |  __new__(*args, **kwargs) from cppyy.CPPScope
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from cppyy.gbl.CPPInstance:
+ |  
+ |  __python_owns__
+ |      If true, python manages the life time of this object
 </pre></div>
 </div>
 </div>
@@ -546,6 +778,19 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_12:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_17:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_10:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_18:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_15:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_16:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_13:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_14:00:00.slab
+/Users/pearse/Downloads/AGU2023/data/wrfout_met_d02_2020-10-22_11:00:00.slab
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="show-dataset-metadata">
@@ -556,6 +801,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Coordinate Variable Name:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTimeCoordVarName</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coordinate Variable Names:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetCoordVarNames</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Coordinate Variable Name: Time
+Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#39;XLAT_V&#39;, &#39;XLONG&#39;, &#39;XLONG_U&#39;, &#39;XLONG_V&#39;, &#39;bottom_top&#39;, &#39;bottom_top_stag&#39;, &#39;Elevation&#39;, &#39;ElevationU&#39;, &#39;ElevationV&#39;, &#39;ElevationW&#39;, &#39;XLATY&#39;, &#39;XLAT_UY&#39;, &#39;XLAT_VY&#39;, &#39;XLONGX&#39;, &#39;XLONG_UX&#39;, &#39;XLONG_VX&#39;]
 </pre></div>
 </div>
 </div>
@@ -572,6 +823,51 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Dimensionality:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetVarGeometryDim</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Coordinates:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetVarCoordVars</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Data Range:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetDataRange</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Variables:
+  FIRE_AREA
+    Time Varying: True
+    Dimensionality: 2
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;]
+     Data Range: [0.0, 1.0]
+  HGT
+    Time Varying: True
+    Dimensionality: 2
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;]
+     Data Range: [2244.004638671875, 4026.545654296875]
+  PH
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;, &#39;ElevationW&#39;]
+     Data Range: [0.0, 765.3257446289062]
+  PHB
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;, &#39;ElevationW&#39;]
+     Data Range: [22013.685546875, 52509.6484375]
+  U
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONG_UX&#39;, &#39;XLAT_UY&#39;, &#39;ElevationU&#39;]
+     Data Range: [-13.070408821105957, 38.378875732421875]
+  V
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONG_VX&#39;, &#39;XLAT_VY&#39;, &#39;ElevationV&#39;]
+     Data Range: [-14.471896171569824, 20.526811599731445]
+  W
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;, &#39;ElevationW&#39;]
+     Data Range: [-11.834917068481445, 11.622491836547852]
+  fire_smoke
+    Time Varying: True
+    Dimensionality: 3
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;, &#39;Elevation&#39;]
+     Data Range: [-4.964304935128894e-06, 0.0457780659198761]
 </pre></div>
 </div>
 </div>
@@ -598,6 +894,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/18e227f2767d2a85d5ed5adc7ef1e850eace5958a3a6d7f9ea4fa13cfba17940.png" src="../_images/18e227f2767d2a85d5ed5adc7ef1e850eace5958a3a6d7f9ea4fa13cfba17940.png" />
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="apply-a-height-variable">
@@ -608,6 +907,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8161d38177437803f218945da661bdcc9cb5ed1812e18b890847788a91b2da38.png" src="../_images/8161d38177437803f218945da661bdcc9cb5ed1812e18b890847788a91b2da38.png" />
 </div>
 </div>
 </div>
@@ -622,6 +924,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="show-a-transfer-function">
@@ -632,6 +936,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <span class="n">utils</span><span class="o">.</span><span class="n">ShowMatPlotLibHistogram</span><span class="p">(</span><span class="n">ses</span><span class="p">,</span> <span class="n">ren</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d426ca1b4f1addde8476e0c2f413725116f3d343ceef6832b5047ac7e5181e91.png" src="../_images/d426ca1b4f1addde8476e0c2f413725116f3d343ceef6832b5047ac7e5181e91.png" />
 </div>
 </div>
 </div>
@@ -646,6 +953,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/e9963d8870d0c8030d0aba3bbb4157dd1fef96fd895efddf0872aa06c338107c.png" src="../_images/e9963d8870d0c8030d0aba3bbb4157dd1fef96fd895efddf0872aa06c338107c.png" />
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="render-the-current-session-in-an-interactive-visualizer">
@@ -659,6 +969,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="load-a-builtin-transfer-function">
@@ -671,6 +983,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="load-a-transfer-function-that-was-configured-in-vapor">
@@ -683,6 +997,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="interactive-sliders-open-visualizer-widget-example-ipynb">
@@ -908,7 +1224,21 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="how-to-cite.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">How to Cite This Cookbook</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dataset_example.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Opening Datasets</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
@@ -954,7 +1284,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 8 December 2023.
+          Last updated on 9 December 2023.
         </p>
       </div>
     </div>
