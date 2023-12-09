@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Set “homeDir” to example data directory &#8212; Quick CMIP demo cookbook</title>
+    <title>AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python &#8212; Quick CMIP demo cookbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Set “homeDir” to example data directory
+   AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -374,114 +374,114 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-homedir-to-example-data-directory">
    Set “homeDir” to example data directory
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-example-data-here">
    Download example data here
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-new-session">
    Create a new Session
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#find-documentation">
    Find documentation
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-data">
    Load data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#show-dataset-metadata">
    Show dataset metadata
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#coordinate-variables">
      Coordinate variables
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables">
      Variables
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-2d-data-renderer">
    Create a 2D Data renderer
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#show-the-renderer">
    Show the renderer
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-a-height-variable">
    Apply a height variable
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-an-interactive-visualizer-with-vaporvisualizerwidget">
    Create an interactive Visualizer with VaporVisualizerWidget()
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#show-a-transfer-function">
    Show a Transfer Function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-opacity-to-a-transfer-function">
    Apply opacity to a Transfer Function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#render-the-current-session-in-an-interactive-visualizer">
    Render the current Session in an interactive Visualizer
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-builtin-transfer-function">
    Load a builtin Transfer Function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-a-transfer-function-that-was-configured-in-vapor">
    Load a Transfer Function that was configured in VAPOR
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interactive-sliders-open-visualizer-widget-example-ipynb">
    Interactive Sliders - Open visualizer_widget_example.ipynb
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#back-to-vapor-for-dvr-and-python-engine">
    *** Back to VAPOR for DVR and Python Engine ***
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#timeseries-animation">
    Timeseries Animation
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#keyframing">
    Keyframing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#camera-orbit">
    Camera Orbit
   </a>
@@ -497,11 +497,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="set-homedir-to-example-data-directory">
-<h1>Set “homeDir” to example data directory<a class="headerlink" href="#set-homedir-to-example-data-directory" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="agu-2023-tutorial-visualizing-2d-and-3d-geoscience-data-in-python">
+<h1>AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python<a class="headerlink" href="#agu-2023-tutorial-visualizing-2d-and-3d-geoscience-data-in-python" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="set-homedir-to-example-data-directory">
+<h2>Set “homeDir” to example data directory<a class="headerlink" href="#set-homedir-to-example-data-directory" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="download-example-data-here">
-<h1><a class="reference external" href="https://drive.google.com/file/d/1ROJ4lSDjiZPy_iUefTFc372kOoLnr9aL/view?usp=sharing">Download example data here</a><a class="headerlink" href="#download-example-data-here" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="download-example-data-here">
+<h2><a class="reference external" href="https://drive.google.com/file/d/1ROJ4lSDjiZPy_iUefTFc372kOoLnr9aL/view?usp=sharing">Download example data here</a><a class="headerlink" href="#download-example-data-here" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#homeDir = &quot;/Users/pearse/Examples/AGU2023&quot;</span>
@@ -511,8 +513,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="create-a-new-session">
-<h1>Create a new Session<a class="headerlink" href="#create-a-new-session" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="create-a-new-session">
+<h2>Create a new Session<a class="headerlink" href="#create-a-new-session" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vapor</span> <span class="kn">import</span> <span class="n">session</span>
@@ -532,8 +534,8 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="find-documentation">
-<h1>Find documentation<a class="headerlink" href="#find-documentation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="find-documentation">
+<h2>Find documentation<a class="headerlink" href="#find-documentation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span>
@@ -762,8 +764,8 @@ class Session(cppyy.gbl.Session)
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="load-data">
-<h1>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="load-data">
+<h2>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -793,10 +795,10 @@ class Session(cppyy.gbl.Session)
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="show-dataset-metadata">
-<h1>Show dataset metadata<a class="headerlink" href="#show-dataset-metadata" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="show-dataset-metadata">
+<h2>Show dataset metadata<a class="headerlink" href="#show-dataset-metadata" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="section" id="coordinate-variables">
-<h2>Coordinate variables<a class="headerlink" href="#coordinate-variables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h3>Coordinate variables<a class="headerlink" href="#coordinate-variables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Coordinate Variable Name:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">GetTimeCoordVarName</span><span class="p">())</span>
@@ -813,7 +815,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 <div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Variables:&quot;</span><span class="p">)</span>
@@ -874,8 +876,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="create-a-2d-data-renderer">
-<h1>Create a 2D Data renderer<a class="headerlink" href="#create-a-2d-data-renderer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="create-a-2d-data-renderer">
+<h2>Create a 2D Data renderer<a class="headerlink" href="#create-a-2d-data-renderer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vapor</span> <span class="kn">import</span> <span class="n">renderer</span>
@@ -886,8 +888,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="show-the-renderer">
-<h1>Show the renderer<a class="headerlink" href="#show-the-renderer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="show-the-renderer">
+<h2>Show the renderer<a class="headerlink" href="#show-the-renderer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
@@ -899,8 +901,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="apply-a-height-variable">
-<h1>Apply a height variable<a class="headerlink" href="#apply-a-height-variable" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="apply-a-height-variable">
+<h2>Apply a height variable<a class="headerlink" href="#apply-a-height-variable" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ren</span><span class="o">.</span><span class="n">SetHeightVariableName</span><span class="p">(</span><span class="s2">&quot;HGT&quot;</span><span class="p">)</span>
@@ -913,8 +915,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="create-an-interactive-visualizer-with-vaporvisualizerwidget">
-<h1>Create an interactive Visualizer with VaporVisualizerWidget()<a class="headerlink" href="#create-an-interactive-visualizer-with-vaporvisualizerwidget" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="create-an-interactive-visualizer-with-vaporvisualizerwidget">
+<h2>Create an interactive Visualizer with VaporVisualizerWidget()<a class="headerlink" href="#create-an-interactive-visualizer-with-vaporvisualizerwidget" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyter_vapor_widget</span> <span class="kn">import</span> <span class="o">*</span>
@@ -928,8 +930,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="show-a-transfer-function">
-<h1>Show a Transfer Function<a class="headerlink" href="#show-a-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="show-a-transfer-function">
+<h2>Show a Transfer Function<a class="headerlink" href="#show-a-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vapor</span> <span class="kn">import</span> <span class="n">utils</span>
@@ -942,8 +944,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="apply-opacity-to-a-transfer-function">
-<h1>Apply opacity to a Transfer Function<a class="headerlink" href="#apply-opacity-to-a-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="apply-opacity-to-a-transfer-function">
+<h2>Apply opacity to a Transfer Function<a class="headerlink" href="#apply-opacity-to-a-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">GetMatPlotLibHistogram</span><span class="p">(</span><span class="n">ses</span><span class="p">,</span> <span class="n">ren</span><span class="p">)</span>
@@ -958,8 +960,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="render-the-current-session-in-an-interactive-visualizer">
-<h1>Render the current Session in an interactive Visualizer<a class="headerlink" href="#render-the-current-session-in-an-interactive-visualizer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="render-the-current-session-in-an-interactive-visualizer">
+<h2>Render the current Session in an interactive Visualizer<a class="headerlink" href="#render-the-current-session-in-an-interactive-visualizer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span> <span class="o">=</span> <span class="n">ren</span><span class="o">.</span><span class="n">GetPrimaryTransferFunction</span><span class="p">()</span>
@@ -973,8 +975,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="load-a-builtin-transfer-function">
-<h1>Load a builtin Transfer Function<a class="headerlink" href="#load-a-builtin-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="load-a-builtin-transfer-function">
+<h2>Load a builtin Transfer Function<a class="headerlink" href="#load-a-builtin-transfer-function" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">LoadBuiltinColormap</span><span class="p">(</span><span class="s2">&quot;Sequential/BlackBody&quot;</span><span class="p">)</span>
@@ -987,8 +989,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="load-a-transfer-function-that-was-configured-in-vapor">
-<h1>Load a Transfer Function that was configured in VAPOR<a class="headerlink" href="#load-a-transfer-function-that-was-configured-in-vapor" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="load-a-transfer-function-that-was-configured-in-vapor">
+<h2>Load a Transfer Function that was configured in VAPOR<a class="headerlink" href="#load-a-transfer-function-that-was-configured-in-vapor" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">LoadColormapFromFile</span><span class="p">(</span> <span class="n">homeDir</span> <span class="o">+</span> <span class="s2">&quot;/fireArea.tf3&quot;</span><span class="p">)</span>
@@ -1001,14 +1003,14 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "408f2b3ced124c93ba7cae095b251a19", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="interactive-sliders-open-visualizer-widget-example-ipynb">
-<h1>Interactive Sliders - Open visualizer_widget_example.ipynb<a class="headerlink" href="#interactive-sliders-open-visualizer-widget-example-ipynb" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="interactive-sliders-open-visualizer-widget-example-ipynb">
+<h2>Interactive Sliders - Open visualizer_widget_example.ipynb<a class="headerlink" href="#interactive-sliders-open-visualizer-widget-example-ipynb" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="back-to-vapor-for-dvr-and-python-engine">
-<h1>*** Back to VAPOR for DVR and Python Engine ***<a class="headerlink" href="#back-to-vapor-for-dvr-and-python-engine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="back-to-vapor-for-dvr-and-python-engine">
+<h2>*** Back to VAPOR for DVR and Python Engine ***<a class="headerlink" href="#back-to-vapor-for-dvr-and-python-engine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="timeseries-animation">
-<h1>Timeseries Animation<a class="headerlink" href="#timeseries-animation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="timeseries-animation">
+<h2>Timeseries Animation<a class="headerlink" href="#timeseries-animation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
@@ -1025,8 +1027,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="keyframing">
-<h1>Keyframing<a class="headerlink" href="#keyframing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="keyframing">
+<h2>Keyframing<a class="headerlink" href="#keyframing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
@@ -1119,8 +1121,8 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="camera-orbit">
-<h1>Camera Orbit<a class="headerlink" href="#camera-orbit" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="camera-orbit">
+<h2>Camera Orbit<a class="headerlink" href="#camera-orbit" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
@@ -1197,6 +1199,7 @@ Coordinate Variable Names: [&#39;Time&#39;, &#39;XLAT&#39;, &#39;XLAT_U&#39;, &#
 
 <span class="n">anim</span><span class="o">.</span><span class="n">SaveMP4</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">video_framerate</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
