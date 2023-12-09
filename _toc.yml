@@ -19,5 +19,6 @@ parts:
 
   - caption: Example workflows
     chapters:
+      - file: notebooks/AGU_2023_example
       - file: notebooks/workflow_example
       - file: notebooks/cloudfield_visualizer
