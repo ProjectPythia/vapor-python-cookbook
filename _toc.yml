@@ -4,6 +4,7 @@ parts:
   - caption: Preamble
     chapters:
       - file: notebooks/how-to-cite
+      - file: notebooks/overview
 
   - caption: Foundations of VAPOR Python
     chapters:
