@@ -13,7 +13,7 @@ The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researc
 
 ## Authors
 
-[Nihanth W. Cherukuru](https://github.com/NihanthCW), [Stanislaw 'Stas' Jarosynski](https://github.com/StasJ), [Philip Austin](https://github.com/phaustin)
+[Nihanth W. Cherukuru](https://github.com/NihanthCW), [Stanislaw 'Stas' Jarosynski](https://github.com/StasJ), [Philip Austin](https://github.com/phaustin), [Ian Franda](github.com/ifranda)
 
 ### Contributors
 
@@ -23,6 +23,7 @@ The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researc
   <img src="https://github.com/shaomeng.png" width="8%" style="border-radius: 50%" />
   <img src="https://github.com/clyne.png" width="8%" style="border-radius: 50%" />
   <img src="https://github.com/NihanthCW.png" width="8%" style="border-radius: 50%" />
+  <img src="https://github.com/ifranda.png" width="8%" style="border-radius: 50%" />
 </a>
 
 ## Structure

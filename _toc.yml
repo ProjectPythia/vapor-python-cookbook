@@ -15,6 +15,7 @@ parts:
       - file: notebooks/transfer_function_example
       - file: notebooks/annotation_example
       - file: notebooks/animation_example
+      - file: notebooks/keyframing_example
       - file: notebooks/flow_example
       - file: notebooks/visualizer_widget_example
 
