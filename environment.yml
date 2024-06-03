@@ -1,4 +1,4 @@
-name: cookbook-dev
+name: vapor-cookbook-dev
 channels:
   - conda-forge
 dependencies:
@@ -6,3 +6,5 @@ dependencies:
   - jupyterlab
   - jupyter_server
   - sphinx-pythia-theme
+  - ncar-vapor::vapor
+  
