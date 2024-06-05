@@ -436,16 +436,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.2
-Python 3.9.19 (/opt/anaconda3/envs/vapor-cookbook-dev)
-OpenGL 4.1 Metal - 83.1
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="initialize-session">
@@ -477,8 +467,12 @@ OpenGL 4.1 Metal - 83.1
 <p>The following cell will download the data from NCAR’s <a class="reference external" href="https://rda.ucar.edu/datasets/ds897.7/dataaccess/#">Research Data Archives</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">get_data</span>
-<span class="n">get_data</span><span class="o">.</span><span class="n">Katrina</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;./data/wrfout_d02_2005-08-29_02.nc&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="err">\</span>
+  <span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span> <span class="s2">&quot;https://data.rda.ucar.edu/ds897.7/Katrina.zip&quot;</span><span class="p">;</span> \
+<span class="n">fi</span>
+<span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;Katrina.zip&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>unzip<span class="w"> </span>-o<span class="w"> </span>Katrina.zip<span class="w"> </span>-d<span class="w"> </span>./data<span class="p">;</span><span class="w"> </span><span class="err">\</span>
+    <span class="n">rm</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span><span class="p">;</span> \
+<span class="n">fi</span>
 </pre></div>
 </div>
 </div>
@@ -603,9 +597,6 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 5 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
-</pre></div>
-</div>
 <img alt="../_images/42564c28ecbe4670eb7db1abe067d3cdcd828a4a1a01502589c6973238fa4e6b.png" src="../_images/42564c28ecbe4670eb7db1abe067d3cdcd828a4a1a01502589c6973238fa4e6b.png" />
 </div>
 </div>
@@ -630,6 +621,19 @@ OpenGL 4.1 Metal - 83.1
 <div class="cell_output docutils container">
 <img alt="../_images/1444992d0d9eff3c06b10da4ec24917826eeb5dd3687f97c8f8422c651425f03.png" src="../_images/1444992d0d9eff3c06b10da4ec24917826eeb5dd3687f97c8f8422c651425f03.png" />
 </div>
+</div>
+<p>We can also generate an interactive visual using Vapor’s jupyter widget. This allows you to move the camera around as if you were using the Vapor application.<br />
+<em>Note: This widget requires an active kernel to operate. To try it out, run this notebook on your local machine.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jupyter_vapor_widget</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">viz</span> <span class="o">=</span> <span class="n">VaporVisualizerWidget</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
+<span class="n">viz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a2315dd804684c88912f0df7c265a1e0", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="export">
@@ -669,7 +673,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: &#39;wrfout_d02_2005-08-29_02&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: &#39;wrfout_d02_2005-08-29_02.nc&#39;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0

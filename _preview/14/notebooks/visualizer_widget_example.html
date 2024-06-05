@@ -420,6 +420,7 @@
 <h1>Visualizer Widgets<a class="headerlink" href="#visualizer-widgets" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <p>Visualizer widgets allow you to interactively explore a session as you would in a Vapor GUI visualizer.
 This notebook shows how to use visualizer widgets and how to add additional dynamic parameter inputs.</p>
+<p><em>Note: Widgets require an active kernel to operate. To try it out, run this notebook on your local machine.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
@@ -434,11 +435,9 @@ This notebook shows how to use visualizer widgets and how to add additional dyna
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.8.3
-Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenGL 4.1 ATI-4.6.21
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.2
+Python 3.9.19 (/opt/anaconda3/envs/vapor-cookbook-dev)
+OpenGL 4.1 Metal - 83.1
 </pre></div>
 </div>
 </div>
@@ -457,7 +456,10 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" src="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 2 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+</pre></div>
+</div>
+<img alt="../_images/3c7b9bc30ae8387aa697223d38962779d5999b0be310fd016fd47e027e0d1fcc.png" src="../_images/3c7b9bc30ae8387aa697223d38962779d5999b0be310fd016fd47e027e0d1fcc.png" />
 </div>
 </div>
 </section>
@@ -475,7 +477,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b4c9cd9333294bbfbaf4918ea8b1a4dd", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "75d3cdfde1274099a2ba30fb14a33f51", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="add-an-interactive-iso-value-slider-using-ipywidgets">
@@ -500,7 +502,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "904a361fbc14464abaa7b9c018264c65", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bc564a85350e42ce9942a7e17a10a166", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
