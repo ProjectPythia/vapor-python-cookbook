@@ -415,7 +415,7 @@
                     
   <section class="tex2jax_ignore mathjax_ignore" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<p>This guide aims to help new users get started with VAPOR’s Python API, showcasing a typical workflow using an example dataset. We will cover some of the key features of the VAPOR API, and explain some of the essential concepts specific to 3D visualization in VAPOR. You can download the data used in this notebook <a class="reference external" href="https://drive.google.com/file/d/1OjBhTFZEwn-JI2FNaSlkiriV43Tcf186/view">here</a></p>
+<p>This guide aims to help new users get started with VAPOR’s Python API, showcasing a typical workflow using an example dataset. We will cover some of the key features of the VAPOR API, and explain some of the essential concepts specific to 3D visualization in VAPOR.</p>
 <p>Creating visualization in VAPOR can be divided into 4 steps, which we will go through in this notebook.</p>
 <ol class="arabic simple">
 <li><p><strong>Import Data</strong></p></li>
@@ -461,15 +461,6 @@ OpenGL 4.1 Metal - 83.1
 </section>
 <section id="load-data">
 <h3>Load Data<a class="headerlink" href="#load-data" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>The following cell will download the data</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">get_data</span>
-<span class="n">get_data</span><span class="o">.</span><span class="n">Katrina</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Once we’ve created our session, we’ll want to load our dataset. Vapor supports a number of scientific data formats, which can be viewed with <code class="docutils literal notranslate"><span class="pre">Dataset.GetDatasetTypes()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,7 +474,16 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 </div>
-<p>In this example, we will be using data from the WRF model of Hurricane Katrina from 2005. The data can be downloaded from <a class="reference external" href="https://drive.google.com/file/d/1OjBhTFZEwn-JI2FNaSlkiriV43Tcf186/view">this link</a>. To load the dataset into our session, we use <code class="docutils literal notranslate"><span class="pre">ses.OpenDataset()</span></code>, which requires two parameters. The first parameter specifies the file format, in this case, dataset.WRF. The second parameter is a list of file paths. Since we only have one file, we provide a list containing just that file.</p>
+<p>The following cell will download the data from NCAR’s <a class="reference external" href="https://rda.ucar.edu/datasets/ds897.7/dataaccess/#">Research Data Archives</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">get_data</span>
+<span class="n">get_data</span><span class="o">.</span><span class="n">Katrina</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we will be using data from the WRF model of Hurricane Katrina from 2005. To load the dataset into our session, we use <code class="docutils literal notranslate"><span class="pre">ses.OpenDataset()</span></code>, which requires two parameters. The first parameter specifies the file format, in this case, dataset.WRF. The second parameter is a list of file paths. Since we only have one file, we provide a list containing just that file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">OpenDataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">WRF</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;data/wrfout_d02_2005-08-29_02.nc&quot;</span><span class="p">])</span>
