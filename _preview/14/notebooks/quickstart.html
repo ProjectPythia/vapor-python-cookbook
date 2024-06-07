@@ -75,6 +75,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Opening Datasets" href="dataset_example.html" />
+    <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="7 June 2024"/>
@@ -230,8 +232,6 @@
         
         
         
-          
-        
         <div class="bd-sidebar-primary bd-sidebar">
           
 
@@ -366,6 +366,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quickstart</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
@@ -464,20 +468,45 @@
 </div>
 </div>
 </div>
-<p>The following cell will download the data from NCAR’s <a class="reference external" href="https://rda.ucar.edu/datasets/ds897.7/dataaccess/#">Research Data Archives</a>.</p>
+<p>In this example, we will be using data from the WRF model of Hurricane Katrina from 2005. The following cell will download the data from NCAR’s <a class="reference external" href="https://rda.ucar.edu/datasets/ds897.7/dataaccess/#">Research Data Archives</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;./data/wrfout_d02_2005-08-29_02.nc&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="err">\</span>
-  <span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span> <span class="s2">&quot;https://data.rda.ucar.edu/ds897.7/Katrina.zip&quot;</span><span class="p">;</span> \
-<span class="n">fi</span>
-<span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;Katrina.zip&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>unzip<span class="w"> </span>-o<span class="w"> </span>Katrina.zip<span class="w"> </span>-d<span class="w"> </span>./data<span class="p">;</span><span class="w"> </span><span class="err">\</span>
-    <span class="n">rm</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span><span class="p">;</span> \
-<span class="n">fi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://data.rda.ucar.edu/ds897.7/Katrina.zip&#39;</span>
+<span class="n">extract_to</span> <span class="o">=</span> <span class="s1">&#39;./data&#39;</span>
+<span class="n">zip_name</span> <span class="o">=</span> <span class="s2">&quot;Katrina.zip&quot;</span>
+<span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;./data/wrfout_d02_2005-08-29_02.nc&#39;</span>
+
+<span class="c1"># Check if the data file already exists</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data_file</span><span class="p">):</span>
+    <span class="c1"># Download zip</span>
+    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">zip_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="c1"># Extract the file</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+        <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">extract_to</span><span class="p">)</span>
+
+    <span class="c1"># Clean up the zip file</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_name</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data downloaded and extracted to </span><span class="si">{</span><span class="n">data_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data file already exists at </span><span class="si">{</span><span class="n">data_file</span><span class="si">}</span><span class="s2">, skipping download and extraction.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data file already exists at ./data/wrfout_d02_2005-08-29_02.nc, skipping download and extraction.
 </pre></div>
 </div>
 </div>
 </div>
-<p>In this example, we will be using data from the WRF model of Hurricane Katrina from 2005. To load the dataset into our session, we use <code class="docutils literal notranslate"><span class="pre">ses.OpenDataset()</span></code>, which requires two parameters. The first parameter specifies the file format, in this case, dataset.WRF. The second parameter is a list of file paths. Since we only have one file, we provide a list containing just that file.</p>
+<p>To load the dataset into our session, we use <code class="docutils literal notranslate"><span class="pre">ses.OpenDataset()</span></code>, which requires two parameters. The first parameter specifies the file format, in this case, dataset.WRF. The second parameter is a list of file paths. Since we only have one file, we provide a list containing just that file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ses</span><span class="o">.</span><span class="n">OpenDataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">WRF</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;data/wrfout_d02_2005-08-29_02.nc&quot;</span><span class="p">])</span>
@@ -485,11 +514,11 @@
 </div>
 </div>
 </div>
-<p>The dataset contains a number of atmospheric variables that describe attributes of the storm, such as pressure, wind, clouds, and rain. For this example, we will use two variables: <code class="docutils literal notranslate"><span class="pre">LANDMASK</span></code>, a 2 dimensional variable to display the coastlines, and <code class="docutils literal notranslate"><span class="pre">QCLOUD</span></code>, a 3 dimensional variable to visualize the cloud formation of the storm. Below we will display the metadata for these variables.</p>
+<p>The dataset contains a number of atmospheric variables that describe attributes of the storm, such as pressure, wind, clouds, and rain. For this example, we will use three variables: <code class="docutils literal notranslate"><span class="pre">U10</span></code>, a 2 dimensional variable that describes the 10 meter zonal wind speed, <code class="docutils literal notranslate"><span class="pre">QCLOUD</span></code>, a 3 dimensional variable to visualize the cloud formation of the storm, and <code class="docutils literal notranslate"><span class="pre">HGT</span></code>, a 2D variable to visualize the topography of the land. Below we will display the metadata for these variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Variables:&quot;</span><span class="p">)</span>
-<span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;U10&quot;</span><span class="p">,</span> <span class="s2">&quot;QCLOUD&quot;</span><span class="p">]</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;U10&quot;</span><span class="p">,</span> <span class="s2">&quot;QCLOUD&quot;</span><span class="p">,</span> <span class="s2">&quot;HGT&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">GetDataVarNames</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -502,6 +531,11 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Variables:
+ HGT
+    Time Varying: False
+    Dimensionality: 2
+    Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;]
+     Data Range: [-4.76837158203125e-07, 435.46844482421875]
  U10
     Time Varying: False
     Dimensionality: 2
@@ -523,32 +557,11 @@
 <p>Now that we’ve loaded our data, it’s time to start the visualization process. Visualization in Vapor is based around renderers, which display data with customizable colors and opacities. Tutorials for using renderers in Vapor’s GUI can be found <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/renderers.html">here</a>, and each one works similarly in Python. In this example, we’ll create a 2D data renderer and a volume renderer.</p>
 <section id="image-renderer">
 <h3>Image Renderer<a class="headerlink" href="#image-renderer" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>We will start with an image renderer. TODO</p>
+<p>We will start by creating an image renderer to display the topography of the land. This dataset is georeferenced, so we can use Vapor’s builtin image simply by calling <code class="docutils literal notranslate"><span class="pre">data.NewRenderer(renderer.ImageRenderer)</span></code>. Additionally, our dataset stores the elevation at each gridpoint in <code class="docutils literal notranslate"><span class="pre">HGT</span></code>, and by linking this to our image renderer with <code class="docutils literal notranslate"><span class="pre">land.SetHeightVariableName(&quot;HGT&quot;)</span></code> we can render the topography in 3D.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">ImageRenderer</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="d-data-renderer">
-<h3>2D Data Renderer<a class="headerlink" href="#d-data-renderer" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>The 2D Data Renderer displays a 2D data variable along the plane described by the dataset. We will use it to display our <code class="docutils literal notranslate"><span class="pre">LANDMASK</span></code> variable, which will shade the surface with land or water. First we select the renderer type by calling <code class="docutils literal notranslate"><span class="pre">NewRenderer()</span></code> on the dataset. Then we select which variable we want to visualize by calling <code class="docutils literal notranslate"><span class="pre">SetVariableName()</span></code> on the renderer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">TwoDDataRenderer</span><span class="p">)</span>
-<span class="n">wind</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="s2">&quot;U10&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can adjust the appearance of our renderer by modifying its transfer function. <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/basicRendererControls.html#appearancetab">Transfer functions</a> describe the color and opacity of the data in the visualization. The <code class="docutils literal notranslate"><span class="pre">delta</span></code> colormap is built into vapor and can be applied to our transfer function to shade the land green and the water blue. The <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/transfer_function_example.html">transfer function notebook</a> provides more examples on how to customize a transfer function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land_transform</span> <span class="o">=</span> <span class="n">land</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span>
 <span class="n">land</span><span class="o">.</span><span class="n">SetHeightVariableName</span><span class="p">(</span><span class="s2">&quot;HGT&quot;</span><span class="p">)</span>
-<span class="n">land_transform</span><span class="o">.</span><span class="n">SetTranslations</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -561,13 +574,33 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" src="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" />
+<img alt="../_images/822ac789059d9398ac9c980eec49a84cf436d1e1c3729152ea1946735b7a94e8.png" src="../_images/822ac789059d9398ac9c980eec49a84cf436d1e1c3729152ea1946735b7a94e8.png" />
+</div>
+</div>
+</section>
+<section id="d-data-renderer">
+<h3>2D Data Renderer<a class="headerlink" href="#d-data-renderer" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>The 2D Data Renderer displays a 2D data variable along the plane described by the dataset. We will use it to display our U10 variable, which represents the east/west wind speed at a 10-meter elevation. First, we select the renderer type by calling <code class="docutils literal notranslate"><span class="pre">NewRenderer()</span></code> on the dataset. Next, we specify the variable to visualize by calling <code class="docutils literal notranslate"><span class="pre">SetVariableName()</span></code> on the renderer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">TwoDDataRenderer</span><span class="p">)</span>
+<span class="n">wind</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="s2">&quot;U10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If our image and 2D data renderers are too close to each other, it can lead to unexpected results. To prevent this, we’ll lift our image renderer slightly off the ground. We can achieve this by using <code class="docutils literal notranslate"><span class="pre">GetTransform()</span></code> and <code class="docutils literal notranslate"><span class="pre">SetTranslations()</span></code> as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land_transform</span> <span class="o">=</span> <span class="n">land</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span>
+<span class="n">land_transform</span><span class="o">.</span><span class="n">SetTranslations</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span><span class="o">.</span><span class="n">SetHeightVariableName</span><span class="p">(</span><span class="s2">&quot;HGT&quot;</span><span class="p">)</span>
-<span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -587,7 +620,8 @@
 </div>
 </div>
 </div>
-<p>We can customize our renderer as desired. First, we will set the colors to a white-gray-black scale. Then, we will adjust the opacities of the renderer. We want areas with almost no clouds to be completely transparent, while areas with more clouds should be more opaque. We use SetOpacityControlPoints with a list of [value, opacity] pairs to specify the opacity of data points with a certain value.</p>
+<p>We can adjust the appearance of our renderer by modifying its <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/basicRendererControls.html#appearancetab">transfer function</a>, which describes the color and opacity of the data in the visualization. The <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/transfer_function_example.html">transfer function notebook</a> provides more examples on how to customize a transfer function.</p>
+<p>First, we will set the colors to a white-gray-black scale. Then, we will adjust the opacities of the renderer. We want areas with almost no clouds to be completely transparent, while areas with more clouds should be more opaque. We use <code class="docutils literal notranslate"><span class="pre">SetOpacityControlPoints</span></code> with a list of [value, opacity] pairs to specify the opacity of data points with a certain value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clouds_tf</span> <span class="o">=</span> <span class="n">clouds</span><span class="o">.</span><span class="n">GetTransferFunction</span><span class="p">(</span><span class="s2">&quot;QCLOUD&quot;</span><span class="p">)</span>
@@ -603,7 +637,7 @@
 </div>
 </div>
 </div>
-<p>To visualize the 3D structure of the clouds effectively, we need to set the camera at an appropriate angle. The <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/userModules/vapor.camera.html">camera module</a> in VAPOR offers several functions for controlling the camera’s position and orientation. Among these, the LookAt() function is the most robust and versatile. It takes two lists, each containing three elements representing a point in 3D space with (X, Y, Z) coordinates. The first list specifies the camera’s position, while the second list defines the point the camera is targeting.</p>
+<p>To visualize the 3D structure of the clouds effectively, we need to set the camera at an appropriate angle. The <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/userModules/vapor.camera.html">camera module</a> in VAPOR offers several functions for controlling the camera’s position and orientation. Among these, the <code class="docutils literal notranslate"><span class="pre">LookAt()</span></code> function is the most robust and versatile. It takes two lists, each containing three elements representing a point in 3D space with (X, Y, Z) coordinates. The first list specifies the camera’s position, while the second list defines the point the camera is targeting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ses</span><span class="o">.</span><span class="n">GetCamera</span><span class="p">()</span><span class="o">.</span><span class="n">LookAt</span><span class="p">(</span>
@@ -622,7 +656,7 @@
 </section>
 <section id="add-annotations">
 <h2>Add Annotations<a class="headerlink" href="#add-annotations" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>We can finalize our visualization with some <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/userModules/vapor.annotations.html">annotations</a>. For a more in depth tutorial on annotations, visit our <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/annotation_example.html">annotation cookbook</a>.</p>
+<p>We can finalize our visualization with some <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/userModules/vapor.annotations.html">annotations</a>. For a more in depth tutorial on annotations, visit our <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/annotation_example.html">annotation cookbook</a>. Here, we’ll add a colorbar for our wind variable and axis arrows to help with orientation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">wind</span><span class="o">.</span><span class="n">GetColorbarAnnotation</span><span class="p">()</span>
@@ -732,6 +766,24 @@
                   <footer class="prev-next-footer">
                     
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="how-to-cite.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to Cite This Cookbook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dataset_example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Opening Datasets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                   </footer>
                 

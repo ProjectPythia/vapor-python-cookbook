@@ -366,6 +366,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
@@ -429,12 +433,37 @@
 <p>The following cell will download the data from NCAR’s <a class="reference external" href="https://rda.ucar.edu/datasets/ds897.7/dataaccess/#">Research Data Archives</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;./data/wrfout_d02_2005-08-29_02.nc&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="err">\</span>
-  <span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span> <span class="s2">&quot;https://data.rda.ucar.edu/ds897.7/Katrina.zip&quot;</span><span class="p">;</span> \
-<span class="n">fi</span>
-<span class="o">!</span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;Katrina.zip&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>unzip<span class="w"> </span>-o<span class="w"> </span>Katrina.zip<span class="w"> </span>-d<span class="w"> </span>./data<span class="p">;</span><span class="w"> </span><span class="err">\</span>
-    <span class="n">rm</span> <span class="n">Katrina</span><span class="o">.</span><span class="n">zip</span><span class="p">;</span> \
-<span class="n">fi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://data.rda.ucar.edu/ds897.7/Katrina.zip&#39;</span>
+<span class="n">extract_to</span> <span class="o">=</span> <span class="s1">&#39;./data&#39;</span>
+<span class="n">zip_name</span> <span class="o">=</span> <span class="s2">&quot;Katrina.zip&quot;</span>
+<span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;./data/wrfout_d02_2005-08-29_02.nc&#39;</span>
+
+<span class="c1"># Check if the data file already exists</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data_file</span><span class="p">):</span>
+    <span class="c1"># Download zip</span>
+    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">zip_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="c1"># Extract the file</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+        <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">extract_to</span><span class="p">)</span>
+
+    <span class="c1"># Clean up the zip file</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_name</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data downloaded and extracted to </span><span class="si">{</span><span class="n">data_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data file already exists at </span><span class="si">{</span><span class="n">data_file</span><span class="si">}</span><span class="s2">, skipping download and extraction.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data file already exists at ./data/wrfout_d02_2005-08-29_02.nc, skipping download and extraction.
 </pre></div>
 </div>
 </div>

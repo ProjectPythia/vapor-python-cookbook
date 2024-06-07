@@ -28,7 +28,7 @@ The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researc
 
 ## Structure
 
-This cookbook is broken up into two main sections - "Foundations" and "Example Workflows". It is not necessary to go through these sections sequentially. Start with "Example Workflows" if you'd like to see VAPOR in action and get a broad overview of a workflow or start with "Foundations" if you'd like to explore the functionality/options in detail.
+This cookbook is divided into three main sections. The "Quickstart" section is a good starting point for a general overview of VAPOR's features and capabilities. The "Foundations" section gives more detailed examples for specific features in VAPOR. The "Example Workflows" section provides practical examples to see VAPOR in action and to gain an understanding of various workflows. Feel free to visit the sections that best fit your needs -- it's not necessary to follow them sequentially!
 
 ### VAPOR Foundations
 
