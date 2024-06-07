@@ -79,7 +79,7 @@
     <link rel="prev" title="Rendering XArray data with Vapor" href="xarray_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="5 June 2024"/>
+    <meta name="docbuild:last-update" content="7 June 2024"/>
   </head>
   
   
@@ -219,6 +219,10 @@
   
   
 
+  
+    <button class="sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -362,6 +366,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
@@ -371,6 +379,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transfer_function_example.html">Transfer Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annotation_example.html">Annotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="animation_example.html">Creating Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
 </ul>
@@ -410,6 +419,7 @@
                     
   <section class="tex2jax_ignore mathjax_ignore" id="controlling-the-camera">
 <h1>Controlling the Camera<a class="headerlink" href="#controlling-the-camera" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>Vapor provides several functions to control the camera position and direction. Here are a few examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
@@ -446,6 +456,8 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 </div>
 </div>
 </div>
+<section id="view-all">
+<h2>View All<a class="headerlink" href="#view-all" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">ViewAll</span><span class="p">)</span>
@@ -465,6 +477,9 @@ ViewAll() method of vapor.camera.Camera instance
 <img alt="../_images/ae75b6d19cde62b4a24093539aa178cfc7b90cc9646ce13ba898dd9db17eacbf.png" src="../_images/ae75b6d19cde62b4a24093539aa178cfc7b90cc9646ce13ba898dd9db17eacbf.png" />
 </div>
 </div>
+</section>
+<section id="align-view">
+<h2>Align View<a class="headerlink" href="#align-view" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">AlignView</span><span class="p">)</span>
@@ -484,6 +499,9 @@ AlignView(axis: str) method of vapor.camera.Camera instance
 <img alt="../_images/dc4c5d4098de80d9996460010672750cf9a2acb26a4de7ff8948a60e19038341.png" src="../_images/dc4c5d4098de80d9996460010672750cf9a2acb26a4de7ff8948a60e19038341.png" />
 </div>
 </div>
+</section>
+<section id="zoom">
+<h2>Zoom<a class="headerlink" href="#zoom" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">Zoom</span><span class="p">)</span>
@@ -502,6 +520,9 @@ Zoom(fractionOfDistanceToTarget: float) method of vapor.camera.Camera instance
 <img alt="../_images/d81539517b3ae882ed3aa4b74ad9d3c36d223074efc99f0ecc705e7a5ef44310.png" src="../_images/d81539517b3ae882ed3aa4b74ad9d3c36d223074efc99f0ecc705e7a5ef44310.png" />
 </div>
 </div>
+</section>
+<section id="look-at">
+<h2>Look At<a class="headerlink" href="#look-at" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">LookAt</span><span class="p">)</span>
@@ -520,6 +541,7 @@ LookAt(camera_position: tuple[float, float, float], target: tuple[float, float, 
 <img alt="../_images/a350d5dbe33413bd3d0b4ba04e7f6f4da59e8005f99ed3b16af9511527708b95.png" src="../_images/a350d5dbe33413bd3d0b4ba04e7f6f4da59e8005f99ed3b16af9511527708b95.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -577,6 +599,24 @@ LookAt(camera_position: tuple[float, float, float], target: tuple[float, float, 
 
               
               
+                
+                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-all">View All</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#align-view">Align View</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zoom">Zoom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at">Look At</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
                 
               
 
@@ -778,7 +818,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -813,7 +855,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 5 June 2024.
+  Last updated on 7 June 2024.
   <br/>
 </p>
   </div>
@@ -867,7 +909,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 5 June 2024.
+          Last updated on 7 June 2024.
         </p>
       </div>
     </div>

@@ -82,7 +82,7 @@
     <link rel="prev" title="Advecting Flow Paths" href="flow_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="5 June 2024"/>
+    <meta name="docbuild:last-update" content="7 June 2024"/>
   </head>
   
   
@@ -369,6 +369,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
@@ -378,6 +382,7 @@
 <li class="toctree-l1"><a class="reference internal" href="transfer_function_example.html">Transfer Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annotation_example.html">Annotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="animation_example.html">Creating Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualizer Widgets</a></li>
 </ul>
@@ -419,6 +424,7 @@
 <h1>Visualizer Widgets<a class="headerlink" href="#visualizer-widgets" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <p>Visualizer widgets allow you to interactively explore a session as you would in a Vapor GUI visualizer.
 This notebook shows how to use visualizer widgets and how to add additional dynamic parameter inputs.</p>
+<p><em>Note: Widgets require an active kernel to operate. To try it out, run this notebook on your local machine.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
@@ -433,11 +439,9 @@ This notebook shows how to use visualizer widgets and how to add additional dyna
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.8.3
-Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OpenGL 4.1 ATI-4.6.21
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.2
+Python 3.9.19 (/opt/anaconda3/envs/vapor-cookbook-dev)
+OpenGL 4.1 Metal - 83.1
 </pre></div>
 </div>
 </div>
@@ -456,7 +460,10 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" src="../_images/fae0a8473b9d188f2600a3fb4fe23ba446c103860045f4672493c466cd1467cc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 2 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+</pre></div>
+</div>
+<img alt="../_images/3c7b9bc30ae8387aa697223d38962779d5999b0be310fd016fd47e027e0d1fcc.png" src="../_images/3c7b9bc30ae8387aa697223d38962779d5999b0be310fd016fd47e027e0d1fcc.png" />
 </div>
 </div>
 </section>
@@ -474,7 +481,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b4c9cd9333294bbfbaf4918ea8b1a4dd", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "75d3cdfde1274099a2ba30fb14a33f51", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="add-an-interactive-iso-value-slider-using-ipywidgets">
@@ -499,7 +506,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "904a361fbc14464abaa7b9c018264c65", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bc564a85350e42ce9942a7e17a10a166", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -814,7 +821,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 5 June 2024.
+  Last updated on 7 June 2024.
   <br/>
 </p>
   </div>
@@ -868,7 +875,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 5 June 2024.
+          Last updated on 7 June 2024.
         </p>
       </div>
     </div>

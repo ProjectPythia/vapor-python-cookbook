@@ -79,7 +79,7 @@
     <link rel="prev" title="Controlling the Camera" href="camera_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="5 June 2024"/>
+    <meta name="docbuild:last-update" content="7 June 2024"/>
   </head>
   
   
@@ -366,6 +366,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
@@ -375,6 +379,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Transfer Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annotation_example.html">Annotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="animation_example.html">Creating Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
 </ul>
@@ -414,6 +419,7 @@
                     
   <section class="tex2jax_ignore mathjax_ignore" id="transfer-functions">
 <h1>Transfer Functions<a class="headerlink" href="#transfer-functions" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>You can change a visualization’s appearance by accessing and modifying its transfer function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">example_utils</span>
@@ -442,6 +448,8 @@ Python 3.9.16 (/Users/ncheruku/mambaforge/envs/vapor-cookbook-dev)
 <img alt="../_images/952bdbe1884a70b3c946a958c7e97a07ca83382fd47bb1e80541ac73bb6d549b.png" src="../_images/952bdbe1884a70b3c946a958c7e97a07ca83382fd47bb1e80541ac73bb6d549b.png" />
 </div>
 </div>
+<section id="changing-opacities">
+<h2>Changing Opacities<a class="headerlink" href="#changing-opacities" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>We created a volume rendering however it is fully opaque.
 We can use a transfer function to adjust the visible portions.
 Before we adjust the opacity map of the TF, we get a histogram to help us determine what we want to hide.</p>
@@ -495,6 +503,7 @@ Before we adjust the opacity map of the TF, we get a histogram to help us determ
 </div>
 <p>You can adjust the colormap in a similar fashion. Use <code class="docutils literal notranslate"><span class="pre">help(tf)</span></code> for more information.
 Vapor includes a list of built-in colormaps and these can be applied with <code class="docutils literal notranslate"><span class="pre">tf.LoadBuiltinColormap(name)</span></code></p>
+</section>
 <section id="builtin-colormaps">
 <h2>Builtin Colormaps<a class="headerlink" href="#builtin-colormaps" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
@@ -735,6 +744,7 @@ Vapor includes a list of built-in colormaps and these can be applied with <code 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-opacities">Changing Opacities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#builtin-colormaps">Builtin Colormaps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-all-builtin-colormaps">List of All Builtin Colormaps</a></li>
 </ul>
@@ -979,7 +989,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 5 June 2024.
+  Last updated on 7 June 2024.
   <br/>
 </p>
   </div>
@@ -1033,7 +1043,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 5 June 2024.
+          Last updated on 7 June 2024.
         </p>
       </div>
     </div>
