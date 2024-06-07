@@ -489,7 +489,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Variables:&quot;</span><span class="p">)</span>
-<span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LANDMASK&quot;</span><span class="p">,</span> <span class="s2">&quot;QCLOUD&quot;</span><span class="p">]</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;U10&quot;</span><span class="p">,</span> <span class="s2">&quot;QCLOUD&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">GetDataVarNames</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -502,11 +502,11 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Variables:
- LANDMASK
+ U10
     Time Varying: False
     Dimensionality: 2
     Coordinates: [&#39;XLONGX&#39;, &#39;XLATY&#39;]
-     Data Range: [0.0, 1.0]
+     Data Range: [-57.80490493774414, 66.07730865478516]
  QCLOUD
     Time Varying: False
     Dimensionality: 3
@@ -521,13 +521,24 @@
 <section id="apply-renderers">
 <h2>Apply Renderers<a class="headerlink" href="#apply-renderers" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Now that we’ve loaded our data, it’s time to start the visualization process. Visualization in Vapor is based around renderers, which display data with customizable colors and opacities. Tutorials for using renderers in Vapor’s GUI can be found <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/renderers.html">here</a>, and each one works similarly in Python. In this example, we’ll create a 2D data renderer and a volume renderer.</p>
+<section id="image-renderer">
+<h3>Image Renderer<a class="headerlink" href="#image-renderer" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>We will start with an image renderer. TODO</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">ImageRenderer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="d-data-renderer">
 <h3>2D Data Renderer<a class="headerlink" href="#d-data-renderer" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>The 2D Data Renderer displays a 2D data variable along the plane described by the dataset. We will use it to display our <code class="docutils literal notranslate"><span class="pre">LANDMASK</span></code> variable, which will shade the surface with land or water. First we select the renderer type by calling <code class="docutils literal notranslate"><span class="pre">NewRenderer()</span></code> on the dataset. Then we select which variable we want to visualize by calling <code class="docutils literal notranslate"><span class="pre">SetVariableName()</span></code> on the renderer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">TwoDDataRenderer</span><span class="p">)</span>
-<span class="n">land</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="s2">&quot;LANDMASK&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">NewRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="o">.</span><span class="n">TwoDDataRenderer</span><span class="p">)</span>
+<span class="n">wind</span><span class="o">.</span><span class="n">SetVariableName</span><span class="p">(</span><span class="s2">&quot;U10&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -535,13 +546,9 @@
 <p>We can adjust the appearance of our renderer by modifying its transfer function. <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/vaporApplicationReference/basicRendererControls.html#appearancetab">Transfer functions</a> describe the color and opacity of the data in the visualization. The <code class="docutils literal notranslate"><span class="pre">delta</span></code> colormap is built into vapor and can be applied to our transfer function to shade the land green and the water blue. The <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/transfer_function_example.html">transfer function notebook</a> provides more examples on how to customize a transfer function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land_tf</span> <span class="o">=</span> <span class="n">land</span><span class="o">.</span><span class="n">GetTransferFunction</span><span class="p">(</span><span class="s2">&quot;LANDMASK&quot;</span><span class="p">)</span>
-<span class="n">land_tf</span><span class="o">.</span><span class="n">LoadBuiltinColormap</span><span class="p">(</span><span class="s2">&quot;Diverging/delta&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land_transform</span> <span class="o">=</span> <span class="n">land</span><span class="o">.</span><span class="n">GetTransform</span><span class="p">()</span>
+<span class="n">land</span><span class="o">.</span><span class="n">SetHeightVariableName</span><span class="p">(</span><span class="s2">&quot;HGT&quot;</span><span class="p">)</span>
+<span class="n">land_transform</span><span class="o">.</span><span class="n">SetTranslations</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -554,7 +561,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06ab2fefc880f6c7f92f9ae1ec7afb59a6e9395adcd28b1104a13f7755d596f6.png" src="../_images/06ab2fefc880f6c7f92f9ae1ec7afb59a6e9395adcd28b1104a13f7755d596f6.png" />
+<img alt="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" src="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span><span class="o">.</span><span class="n">SetHeightVariableName</span><span class="p">(</span><span class="s2">&quot;HGT&quot;</span><span class="p">)</span>
+<span class="n">ses</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" src="../_images/502ea8a15b56ff4ba0cd8802d045bcc860f677a115dc5bff586c60b27d403942.png" />
 </div>
 </div>
 </section>
@@ -597,7 +615,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/42564c28ecbe4670eb7db1abe067d3cdcd828a4a1a01502589c6973238fa4e6b.png" src="../_images/42564c28ecbe4670eb7db1abe067d3cdcd828a4a1a01502589c6973238fa4e6b.png" />
+<img alt="../_images/072bda9772cf04e1fa60ea073a1755cf681da16bae315766ee60cb0061472417.png" src="../_images/072bda9772cf04e1fa60ea073a1755cf681da16bae315766ee60cb0061472417.png" />
 </div>
 </div>
 </section>
@@ -607,7 +625,7 @@
 <p>We can finalize our visualization with some <a class="reference external" href="https://ncar.github.io/VaporDocumentationWebsite/pythonAPIReference/userModules/vapor.annotations.html">annotations</a>. For a more in depth tutorial on annotations, visit our <a class="reference external" href="https://projectpythia.org/vapor-python-cookbook/notebooks/annotation_example.html">annotation cookbook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">clouds</span><span class="o">.</span><span class="n">GetColorbarAnnotation</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">wind</span><span class="o">.</span><span class="n">GetColorbarAnnotation</span><span class="p">()</span>
 <span class="n">colorbar</span><span class="o">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="o">.</span><span class="n">SetCornerPosition</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
@@ -619,7 +637,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1444992d0d9eff3c06b10da4ec24917826eeb5dd3687f97c8f8422c651425f03.png" src="../_images/1444992d0d9eff3c06b10da4ec24917826eeb5dd3687f97c8f8422c651425f03.png" />
+<img alt="../_images/c77245a3ce6292f9b1603e72e0f1f5371b52e6476d9da6e1701af3050891a4ce.png" src="../_images/c77245a3ce6292f9b1603e72e0f1f5371b52e6476d9da6e1701af3050891a4ce.png" />
 </div>
 </div>
 <p>We can also generate an interactive visual using Vapor’s jupyter widget. This allows you to move the camera around as if you were using the Vapor application.<br />
@@ -633,7 +651,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a2315dd804684c88912f0df7c265a1e0", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f848ada437644d1bb48406b1d0af8cf8", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="export">
@@ -738,6 +756,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-renderers">Apply Renderers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-renderer">Image Renderer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-data-renderer">2D Data Renderer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-renderer">Volume Renderer</a></li>
 </ul>
