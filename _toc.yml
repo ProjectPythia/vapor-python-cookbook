@@ -4,6 +4,9 @@ parts:
   - caption: Preamble
     chapters:
       - file: notebooks/how-to-cite
+  - caption: Quickstart Guide
+    chapters:
+      - file: notebooks/quickstart
 
   - caption: Foundations of VAPOR Python
     chapters:
@@ -14,6 +17,7 @@ parts:
       - file: notebooks/transfer_function_example
       - file: notebooks/annotation_example
       - file: notebooks/animation_example
+      - file: notebooks/keyframing_example
       - file: notebooks/flow_example
       - file: notebooks/visualizer_widget_example
 
