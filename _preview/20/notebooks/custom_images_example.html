@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Creating Custom Map Images for Vapor &#8212; VAPOR Python Cookbook</title>
+    <title>Creating Custom Map Images &#8212; VAPOR Python Cookbook</title>
   
   
   
@@ -387,7 +387,7 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Custom Map Images for Vapor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Custom Map Images</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -428,14 +428,12 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <section class="tex2jax_ignore mathjax_ignore" id="creating-custom-map-images-for-vapor">
-<h1>Creating Custom Map Images for Vapor<a class="headerlink" href="#creating-custom-map-images-for-vapor" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<p>Vapor has a built in image renderer that can be used to draw land beneath your visualization. However, if you load the data using XArray or if the dataset lacks georeferencing information, the geographic extent of the image renderer will be incorrect. In this guide we will create a map image with custom bounds that can be displayed with vapor’s image renderer</p>
-<p>Note: We need vapor, cartopy, owslib</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-custom-map-images">
+<h1>Creating Custom Map Images<a class="headerlink" href="#creating-custom-map-images" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>Vapor has a built in image renderer that can be used to draw land beneath your visualization. However, if you load the data using XArray or if the dataset lacks georeferencing information, the geographic extent of the image renderer will be incorrect. In this guide we will create a map image with custom bounds that can be displayed with Vapor’s image renderer.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>This guide requires vapor and owslib libraries: <br />
-<br />
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">ncar-vapor</span> <span class="pre">vapor</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">conda-forge::owslib</span></code></p>
 <p>We will also use vapor’s Katrina sample dataset:</p>
