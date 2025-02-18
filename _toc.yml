@@ -20,6 +20,7 @@ parts:
       - file: notebooks/keyframing_example
       - file: notebooks/flow_example
       - file: notebooks/visualizer_widget_example
+      - file: notebooks/custom_images_example
 
   - caption: Example workflows
     chapters:
