@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Creating Custom Map Images &#8212; VAPOR Python Cookbook</title>
+    <title>Creating Custom Map Images for Vapor &#8212; VAPOR Python Cookbook</title>
   
   
   
@@ -78,8 +78,6 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python" href="AGU_2023_example.html" />
-    <link rel="prev" title="Visualizer Widgets" href="visualizer_widget_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -238,6 +236,8 @@
         
         
         
+          
+        
         <div class="bd-sidebar-primary bd-sidebar">
           
 
@@ -376,7 +376,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of VAPOR Python</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dataset_example.html">Opening Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_example.html">Rendering Numpy data with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xarray_example.html">Rendering XArray data with Vapor</a></li>
@@ -387,7 +387,6 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Custom Map Images</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -428,12 +427,14 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <section class="tex2jax_ignore mathjax_ignore" id="creating-custom-map-images">
-<h1>Creating Custom Map Images<a class="headerlink" href="#creating-custom-map-images" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<p>Vapor has a built in image renderer that can be used to draw land beneath your visualization. However, if you load the data using XArray or if the dataset lacks georeferencing information, the geographic extent of the image renderer will be incorrect. In this guide we will create a map image with custom bounds that can be displayed with Vapor’s image renderer.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-custom-map-images-for-vapor">
+<h1>Creating Custom Map Images for Vapor<a class="headerlink" href="#creating-custom-map-images-for-vapor" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<p>Vapor has a built in image renderer that can be used to draw land beneath your visualization. However, if you load the data using XArray or if the dataset lacks georeferencing information, the geographic extent of the image renderer will be incorrect. In this guide we will create a map image with custom bounds that can be displayed with vapor’s image renderer</p>
+<p>Note: We need vapor, cartopy, owslib</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>This guide requires vapor and owslib libraries: <br />
+<br />
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-c</span> <span class="pre">ncar-vapor</span> <span class="pre">vapor</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">conda-forge::owslib</span></code></p>
 <p>We will also use vapor’s Katrina sample dataset:</p>
@@ -552,22 +553,6 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:856: FutureWarning: The behavior of this method will change in future versions. Use specific &#39;len(elem)&#39; or &#39;elem is not None&#39; test instead.
-  if current and current.text == &#39;true&#39;:
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;1&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;2&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;3&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;4&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;5&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/owslib/wmts.py:653: RuntimeWarning: TileMatrixLimits with tileMatrix &quot;6&quot; already exists
-  warnings.warn(msg, RuntimeWarning)
-</pre></div>
-</div>
 <img alt="../_images/1b581a17a8beb53102ee2c142f98162ff66f9407454c59b6ac5a5fb3a7234d56.png" src="../_images/1b581a17a8beb53102ee2c142f98162ff66f9407454c59b6ac5a5fb3a7234d56.png" />
 </div>
 </div>
@@ -597,7 +582,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x16b1723d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x3c0ab64f0&gt;
 </pre></div>
 </div>
 </div>
@@ -614,7 +599,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x16b166f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x3c0ab6730&gt;
 </pre></div>
 </div>
 </div>
@@ -631,7 +616,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x16b166fa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x3c0ab6a00&gt;
 </pre></div>
 </div>
 </div>
@@ -646,12 +631,6 @@ variables.</p>
              <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
              <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/Feb15_vapor/lib/python3.9/site-packages/shapely/predicates.py:798: RuntimeWarning: invalid value encountered in intersects
-  return lib.intersects(a, b, **kwargs)
 </pre></div>
 </div>
 </div>
@@ -693,17 +672,6 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.3
-Python 3.9.19 (/opt/anaconda3/envs/Feb15_vapor)
-OpenGL 4.1 Metal - 83.1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 5 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
-</pre></div>
-</div>
 <img alt="../_images/eaf62a96beda907c90529bc0857d2cb4e46a552df2d2e0f05bd180c645c76758.png" src="../_images/eaf62a96beda907c90529bc0857d2cb4e46a552df2d2e0f05bd180c645c76758.png" />
 </div>
 </div>
@@ -740,24 +708,6 @@ OpenGL 4.1 Metal - 83.1
                   <footer class="prev-next-footer">
                     
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="visualizer_widget_example.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Visualizer Widgets</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="AGU_2023_example.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                   </footer>
                 
