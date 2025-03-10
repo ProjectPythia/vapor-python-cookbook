@@ -13,6 +13,7 @@ parts:
       - file: notebooks/dataset_example
       - file: notebooks/numpy_example
       - file: notebooks/xarray_example
+      - file: notebooks/xarray_dataset_example
       - file: notebooks/camera_example
       - file: notebooks/transfer_function_example
       - file: notebooks/annotation_example
@@ -23,6 +24,6 @@ parts:
 
   - caption: Example workflows
     chapters:
-      - file: notebooks/AGU_2023_example
       - file: notebooks/workflow_example
+      - file: notebooks/AGU_2023_example
       - file: notebooks/cloudfield_visualizer
