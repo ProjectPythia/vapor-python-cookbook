@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -82,8 +79,7 @@
     <link rel="prev" title="AGU 2023 Tutorial: Visualizing 2D and 3D Geoscience Data in Python" href="AGU_2023_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="18 February 2025"/>
+    <meta name="docbuild:last-update" content="12 May 2025"/>
   </head>
   
   
@@ -122,7 +118,7 @@
     
     
     <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="VAPOR Python Cookbook - Home"/>
-    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="VAPOR Python Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="VAPOR Python Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -349,6 +345,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -387,6 +384,7 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_images_example.html">Custom Map Images with Cartopy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="current nav bd-sidenav">
@@ -401,14 +399,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -440,12 +433,9 @@ You can have multiple sessions open at the same time.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.10.0
 Python 3.9.19 (/opt/anaconda3/envs/vapor)
-OpenGL 4.1 Metal - 83.1
+OpenGL 4.1 Metal - 89.3
 </pre></div>
 </div>
 </div>
@@ -528,7 +518,7 @@ Data Variables:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rendering 2D variable U10
 </pre></div>
 </div>
-<img alt="../_images/bd262a4f26896cfc0a4b0b74cd17da8db9684e4b5a0a8aa279aa5464a3b1fa84.png" src="../_images/bd262a4f26896cfc0a4b0b74cd17da8db9684e4b5a0a8aa279aa5464a3b1fa84.png" />
+<img alt="../_images/a5bd845cb48e9af662039bc855aabbf0c2429ce3d7595975c1bf9aaf76c494ab.png" src="../_images/a5bd845cb48e9af662039bc855aabbf0c2429ce3d7595975c1bf9aaf76c494ab.png" />
 </div>
 </div>
 </section>
@@ -550,7 +540,7 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d473047c12f5e4996855e951f18a8e3618ff3cbbb36e0939f45411ab25a92b43.png" src="../_images/d473047c12f5e4996855e951f18a8e3618ff3cbbb36e0939f45411ab25a92b43.png" />
+<img alt="../_images/2f03a243186089a66619ef6c20fd1541d18c2484f9ee820ca7850c15e2d7d5f7.png" src="../_images/2f03a243186089a66619ef6c20fd1541d18c2484f9ee820ca7850c15e2d7d5f7.png" />
 </div>
 </div>
 </section>
@@ -568,7 +558,7 @@ Data Variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cb04e6e8c0107ebf850daa4f60bdee8db80d3935c8c2679de388641c9285bb38.png" src="../_images/cb04e6e8c0107ebf850daa4f60bdee8db80d3935c8c2679de388641c9285bb38.png" />
+<img alt="../_images/256df57e06b1652ff913c46c0ce3890096b6b9637358740c82873adfe7de30ef.png" src="../_images/256df57e06b1652ff913c46c0ce3890096b6b9637358740c82873adfe7de30ef.png" />
 </div>
 </div>
 </section>
@@ -594,8 +584,8 @@ Data Variables:
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 3 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
 </pre></div>
 </div>
-<img alt="../_images/8a4b3fbaf0b08ec9f21b4a178a1a1c06302ee503fc8da0b576f3190e1e263ece.png" src="../_images/8a4b3fbaf0b08ec9f21b4a178a1a1c06302ee503fc8da0b576f3190e1e263ece.png" />
-<img alt="../_images/377c6c3b4d0ea73be775ffe4a365913836a60cfa8978cb9b40ea4d93ff3e719b.png" src="../_images/377c6c3b4d0ea73be775ffe4a365913836a60cfa8978cb9b40ea4d93ff3e719b.png" />
+<img alt="../_images/323343b55f3d219def6b71f7cabff66b1bbb87bd254bfa4e562506d5ede99f43.png" src="../_images/323343b55f3d219def6b71f7cabff66b1bbb87bd254bfa4e562506d5ede99f43.png" />
+<img alt="../_images/bedc2cfa1c57e4842c46bf7aac7e7ce96c9c6146d144eb07b61c6de4a554b44c.png" src="../_images/bedc2cfa1c57e4842c46bf7aac7e7ce96c9c6146d144eb07b61c6de4a554b44c.png" />
 </div>
 </div>
 </section>
@@ -619,7 +609,7 @@ This can be manually adjusted as shown below.</p>
 New dataset scaling = [1.0, 1.0, 0.3]
 </pre></div>
 </div>
-<img alt="../_images/16380d51fa5dd906e5d78dcb55d8aa78ba5dbd7d4f6a64238344849f103669a7.png" src="../_images/16380d51fa5dd906e5d78dcb55d8aa78ba5dbd7d4f6a64238344849f103669a7.png" />
+<img alt="../_images/fdcdc1c01de540224478010931b9ff867960f84ad10ddb06bce70b092e4000d2.png" src="../_images/fdcdc1c01de540224478010931b9ff867960f84ad10ddb06bce70b092e4000d2.png" />
 </div>
 </div>
 </section>
@@ -634,7 +624,7 @@ New dataset scaling = [1.0, 1.0, 0.3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/38438cb34d58cdf7f3f9a26c05dfe812c986c7ec5583e3dba138597099b22646.png" src="../_images/38438cb34d58cdf7f3f9a26c05dfe812c986c7ec5583e3dba138597099b22646.png" />
+<img alt="../_images/7cd724534999fc1b556bd797d5aa217080d0cef475d930751a22e0e6a874bda2.png" src="../_images/7cd724534999fc1b556bd797d5aa217080d0cef475d930751a22e0e6a874bda2.png" />
 </div>
 </div>
 </section>
@@ -653,7 +643,7 @@ this would work.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Session.cpp:121] Cannot save session that contains data dynamically loaded from python (dataset.PYTHON)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Session.cpp:125] Cannot save session that contains data dynamically loaded from python (dataset.PYTHON)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
@@ -924,16 +914,24 @@ this would work.</p>
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -971,7 +969,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 18 February 2025.
+  Last updated on 12 May 2025.
   <br/>
 </p>
   </div>
@@ -988,8 +986,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
      
@@ -1025,7 +1023,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 18 February 2025.
+          Last updated on 12 May 2025.
         </p>
       </div>
     </div>

@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -82,8 +79,7 @@
     <link rel="prev" title="Transfer Functions" href="transfer_function_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="18 February 2025"/>
+    <meta name="docbuild:last-update" content="12 May 2025"/>
   </head>
   
   
@@ -122,7 +118,7 @@
     
     
     <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="VAPOR Python Cookbook - Home"/>
-    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="VAPOR Python Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="VAPOR Python Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -349,6 +345,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -387,6 +384,7 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_images_example.html">Custom Map Images with Cartopy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -401,14 +399,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -446,12 +439,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.10.0
 Python 3.9.19 (/opt/anaconda3/envs/vapor)
-OpenGL 4.1 Metal - 83.1
+OpenGL 4.1 Metal - 89.3
 </pre></div>
 </div>
 </div>
@@ -468,7 +458,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/262c154a820a8b1e74829aa105f53a739ba3cec455dfb6c63ca02b802550fe1e.png" src="../_images/262c154a820a8b1e74829aa105f53a739ba3cec455dfb6c63ca02b802550fe1e.png" />
+<img alt="../_images/823fc8ed04fd0b6e1ee5fff69433f5579a3f727f41ab534b20ef125d2b5128a2.png" src="../_images/823fc8ed04fd0b6e1ee5fff69433f5579a3f727f41ab534b20ef125d2b5128a2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -485,7 +475,7 @@ OpenGL 4.1 Metal - 83.1
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
 </pre></div>
 </div>
-<img alt="../_images/9b3e8d0620c3dc9684570d587d7a9d54d18ff4752ff1eb4bcbc2825297683765.png" src="../_images/9b3e8d0620c3dc9684570d587d7a9d54d18ff4752ff1eb4bcbc2825297683765.png" />
+<img alt="../_images/ddae4454ba1d42e5cd5a1a17c3a0301459bd2fab7c5c65ad3944f18fae219fe1.png" src="../_images/ddae4454ba1d42e5cd5a1a17c3a0301459bd2fab7c5c65ad3944f18fae219fe1.png" />
 </div>
 </div>
 </section>
@@ -500,7 +490,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cd3e3e9805e98dc2566dd873789a492b87a911143adc6c86247044f4ccfb61b1.png" src="../_images/cd3e3e9805e98dc2566dd873789a492b87a911143adc6c86247044f4ccfb61b1.png" />
+<img alt="../_images/629d2cd0720c260b9ca1f739dc3ca37286c2a18de02e4891f42d735e982f7172.png" src="../_images/629d2cd0720c260b9ca1f739dc3ca37286c2a18de02e4891f42d735e982f7172.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -510,7 +500,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1a2dea9347b918ce2741cf5186b9d7d2bd31f4c167d3cd27bbe515a17d2a0223.png" src="../_images/1a2dea9347b918ce2741cf5186b9d7d2bd31f4c167d3cd27bbe515a17d2a0223.png" />
+<img alt="../_images/c67d7828e774844517f5757eeb8c4f694dfaf9fc4ab1e5ba8f1328ad73894210.png" src="../_images/c67d7828e774844517f5757eeb8c4f694dfaf9fc4ab1e5ba8f1328ad73894210.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -523,8 +513,8 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d0c18d6f678ae69ab989d8ae0f3da64b4511171f51a191c75ce1d95814e9820.png" src="../_images/6d0c18d6f678ae69ab989d8ae0f3da64b4511171f51a191c75ce1d95814e9820.png" />
-<img alt="../_images/d21b0cd2e0bba72440a5268850c123274ebf918b707de906b07d1be855e2b2e8.png" src="../_images/d21b0cd2e0bba72440a5268850c123274ebf918b707de906b07d1be855e2b2e8.png" />
+<img alt="../_images/82f5c85d605fbf23042cba8703bbf8101e6203b0ac53fba2ca3770f68c35abd7.png" src="../_images/82f5c85d605fbf23042cba8703bbf8101e6203b0ac53fba2ca3770f68c35abd7.png" />
+<img alt="../_images/54ba49ca59199a8eb19c25d60cc18cbaa3da9a49936dd657158bb0f71d6eae8a.png" src="../_images/54ba49ca59199a8eb19c25d60cc18cbaa3da9a49936dd657158bb0f71d6eae8a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -544,7 +534,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a104fff93b50e17bf5a30bee1253ea1f8240652ee9d7b22009514b1f0cac5eb.png" src="../_images/4a104fff93b50e17bf5a30bee1253ea1f8240652ee9d7b22009514b1f0cac5eb.png" />
+<img alt="../_images/a205d705df1c8cf801b777310b0185f23d7f2d357f42e3c0b8be23c2eb6d73b2.png" src="../_images/a205d705df1c8cf801b777310b0185f23d7f2d357f42e3c0b8be23c2eb6d73b2.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -560,7 +550,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5bfbc044f686c9356e3b0738b1c1adfadac1e757bf2698e6ce14461b0c65f841.png" src="../_images/5bfbc044f686c9356e3b0738b1c1adfadac1e757bf2698e6ce14461b0c65f841.png" />
+<img alt="../_images/1a0c6ed998eb925c8864485dead104b662b6b6b99eee8f31aed7a48eae238ca4.png" src="../_images/1a0c6ed998eb925c8864485dead104b662b6b6b99eee8f31aed7a48eae238ca4.png" />
 </div>
 </div>
 </section>
@@ -575,7 +565,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b5624ed01d237a2f4aa6f4dbd441cf3fa65f83623a0ff3a0974abd35430dae1.png" src="../_images/1b5624ed01d237a2f4aa6f4dbd441cf3fa65f83623a0ff3a0974abd35430dae1.png" />
+<img alt="../_images/1316b0010180a2692bf2512e2e6986244bf8dde06b952b4bfc9f244f7ebf8d02.png" src="../_images/1316b0010180a2692bf2512e2e6986244bf8dde06b952b4bfc9f244f7ebf8d02.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -590,7 +580,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5fb5272886e2a1cece516ad0c50e6c5f23446952689b23f95a1553e6d9a20576.png" src="../_images/5fb5272886e2a1cece516ad0c50e6c5f23446952689b23f95a1553e6d9a20576.png" />
+<img alt="../_images/bd8c18b43d671006c469f86c58f1442c27c91452307acff682afff6936a46def.png" src="../_images/bd8c18b43d671006c469f86c58f1442c27c91452307acff682afff6936a46def.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -614,7 +604,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c64d2556ffb62abdad674793379c0c64452425ebec7863a98c67f6922c4b3b8.png" src="../_images/4c64d2556ffb62abdad674793379c0c64452425ebec7863a98c67f6922c4b3b8.png" />
+<img alt="../_images/a0fa30b4cbd4662ced372595f51fa62e000639c0d5593ffa91a0d04c23ad0067.png" src="../_images/a0fa30b4cbd4662ced372595f51fa62e000639c0d5593ffa91a0d04c23ad0067.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -631,7 +621,7 @@ OpenGL 4.1 Metal - 83.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb2dc50632e48016344f40ecb7f101ef48855183d4bd115fddfec02fb82ba4f1.png" src="../_images/fb2dc50632e48016344f40ecb7f101ef48855183d4bd115fddfec02fb82ba4f1.png" />
+<img alt="../_images/56145d05d7606d3567a1b27619c8f57188551b952f238bafdae9abe8e1a49217.png" src="../_images/56145d05d7606d3567a1b27619c8f57188551b952f238bafdae9abe8e1a49217.png" />
 </div>
 </div>
 </section>
@@ -894,16 +884,24 @@ OpenGL 4.1 Metal - 83.1
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -941,7 +939,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 18 February 2025.
+  Last updated on 12 May 2025.
   <br/>
 </p>
   </div>
@@ -958,8 +956,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
      
@@ -995,7 +993,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 18 February 2025.
+          Last updated on 12 May 2025.
         </p>
       </div>
     </div>

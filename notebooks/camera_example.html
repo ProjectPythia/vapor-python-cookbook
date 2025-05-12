@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -82,8 +79,7 @@
     <link rel="prev" title="Rendering XArray data with Vapor" href="xarray_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="18 February 2025"/>
+    <meta name="docbuild:last-update" content="12 May 2025"/>
   </head>
   
   
@@ -122,7 +118,7 @@
     
     
     <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="VAPOR Python Cookbook - Home"/>
-    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="VAPOR Python Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="VAPOR Python Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -349,6 +345,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -387,6 +384,7 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_images_example.html">Custom Map Images with Cartopy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -401,14 +399,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -447,12 +440,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.10.0
 Python 3.9.19 (/opt/anaconda3/envs/vapor)
-OpenGL 4.1 Metal - 83.1
+OpenGL 4.1 Metal - 89.3
 </pre></div>
 </div>
 </div>
@@ -485,7 +475,7 @@ ViewAll() method of vapor.camera.Camera instance
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 2 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
 </pre></div>
 </div>
-<img alt="../_images/0ce7424ff8db25a6bd43e87e11a25eaa8d067e5c6aca3cb481d37e821cabfc69.png" src="../_images/0ce7424ff8db25a6bd43e87e11a25eaa8d067e5c6aca3cb481d37e821cabfc69.png" />
+<img alt="../_images/4fcbaa4949b162fb29b067d88e013b5da77480a480eb68dcd3d07bfcbbfedcce.png" src="../_images/4fcbaa4949b162fb29b067d88e013b5da77480a480eb68dcd3d07bfcbbfedcce.png" />
 </div>
 </div>
 </section>
@@ -507,7 +497,7 @@ AlignView(axis: str) method of vapor.camera.Camera instance
     Axis format: [+-][XYZ]
 </pre></div>
 </div>
-<img alt="../_images/5da85c1cb932bb8e8293c67f73f3389cb93919822375e84de3ed2a042d87f667.png" src="../_images/5da85c1cb932bb8e8293c67f73f3389cb93919822375e84de3ed2a042d87f667.png" />
+<img alt="../_images/8d0b231c7042b590dc2d21dfb0d34c49fb45a774a212dedf6a3620a6edf3c7fb.png" src="../_images/8d0b231c7042b590dc2d21dfb0d34c49fb45a774a212dedf6a3620a6edf3c7fb.png" />
 </div>
 </div>
 </section>
@@ -528,7 +518,7 @@ Zoom(fractionOfDistanceToTarget: float) method of vapor.camera.Camera instance
     Moves the camera a fractionOfDistanceToTarget with positive zooming in and negative zooming out.
 </pre></div>
 </div>
-<img alt="../_images/210f07dacd2685f013b6455d9e734095fbc40d406044349699c83a17bce106fa.png" src="../_images/210f07dacd2685f013b6455d9e734095fbc40d406044349699c83a17bce106fa.png" />
+<img alt="../_images/8e41032b9a309fd63ff079f8c5b1c3bdbd27a53638b6ebad99f96ee867ddc434.png" src="../_images/8e41032b9a309fd63ff079f8c5b1c3bdbd27a53638b6ebad99f96ee867ddc434.png" />
 </div>
 </div>
 </section>
@@ -549,7 +539,7 @@ LookAt(camera_position: tuple[float, float, float], target: tuple[float, float, 
     Moves the camera to camera_position facing target. up can be used to adjust the camera roll.
 </pre></div>
 </div>
-<img alt="../_images/57c4bc2054142dda0fdb91d9f11ff4ff14e8f0abdccbdd8c39a40b799796b715.png" src="../_images/57c4bc2054142dda0fdb91d9f11ff4ff14e8f0abdccbdd8c39a40b799796b715.png" />
+<img alt="../_images/839592179d0ac5af3fa58a8a8a25191956db1c50902fa722a31eee34d92329e4.png" src="../_images/839592179d0ac5af3fa58a8a8a25191956db1c50902fa722a31eee34d92329e4.png" />
 </div>
 </div>
 </section>
@@ -811,16 +801,24 @@ LookAt(camera_position: tuple[float, float, float], target: tuple[float, float, 
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -858,7 +856,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 18 February 2025.
+  Last updated on 12 May 2025.
   <br/>
 </p>
   </div>
@@ -875,8 +873,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
      
@@ -912,7 +910,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 18 February 2025.
+          Last updated on 12 May 2025.
         </p>
       </div>
     </div>

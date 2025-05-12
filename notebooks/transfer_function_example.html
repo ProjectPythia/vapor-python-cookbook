@@ -16,19 +16,17 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -82,8 +79,7 @@
     <link rel="prev" title="Controlling the Camera" href="camera_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="18 February 2025"/>
+    <meta name="docbuild:last-update" content="12 May 2025"/>
   </head>
   
   
@@ -122,7 +118,7 @@
     
     
     <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="VAPOR Python Cookbook - Home"/>
-    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="VAPOR Python Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="VAPOR Python Cookbook - Home"/>`);</script>
   
   
 </a></div>
@@ -349,6 +345,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -387,6 +384,7 @@
 <li class="toctree-l1"><a class="reference internal" href="keyframing_example.html">Keyframing with Vapor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_example.html">Advecting Flow Paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualizer_widget_example.html">Visualizer Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_images_example.html">Custom Map Images with Cartopy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example workflows</span></p>
 <ul class="nav bd-sidenav">
@@ -401,14 +399,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -446,23 +439,32 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: sysroot &quot;/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk&quot; not found (ignoring for now).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.9.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vapor 3.10.0
 Python 3.9.19 (/opt/anaconda3/envs/vapor)
-OpenGL 4.1 Metal - 83.1
+OpenGL 4.1 Metal - 89.3
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UNSUPPORTED (log once): POSSIBLE ISSUE: unit 3 GLD_TEXTURE_INDEX_3D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
 </pre></div>
 </div>
-<img alt="../_images/e0612cb8ca7a0ecba2e349f8b3d281f77ef161e55f9415c5776077c5a5b7e960.png" src="../_images/e0612cb8ca7a0ecba2e349f8b3d281f77ef161e55f9415c5776077c5a5b7e960.png" />
+<img alt="../_images/e9bb9c5e8c05ae2ee38c35c371e36e8f55326a4ea1cba3d0dccf4efacafe73df.png" src="../_images/e9bb9c5e8c05ae2ee38c35c371e36e8f55326a4ea1cba3d0dccf4efacafe73df.png" />
 </div>
 </div>
 <section id="changing-opacities">
 <h2>Changing Opacities<a class="headerlink" href="#changing-opacities" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>We created a volume rendering however it is fully opaque.
+<p>Vapor’s transferFunctionWidget allows you to adjust the opacity points of a renderer as you would within Vapor’s GUI.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vapor.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">histogram</span>
+<span class="n">histogram</span><span class="o">.</span><span class="n">transferFunctionWidget</span><span class="p">(</span><span class="n">ses</span><span class="p">,</span> <span class="n">ren</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d8c27ecda7cd45858b838f42a44b5e1d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>If you do not have access to the widget, we provide static options for changing the opacities as well.
+We created a volume rendering however it is fully opaque.
 We can use a transfer function to adjust the visible portions.
 Before we adjust the opacity map of the TF, we get a histogram to help us determine what we want to hide.</p>
 <div class="cell docutils container">
@@ -472,7 +474,7 @@ Before we adjust the opacity map of the TF, we get a histogram to help us determ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9996235b994e2413a963f3c5dcaf7e815ee7665dcad94acc7fc770b3e82d3bf4.png" src="../_images/9996235b994e2413a963f3c5dcaf7e815ee7665dcad94acc7fc770b3e82d3bf4.png" />
+<img alt="../_images/905cd7f94d8a29c1d124031001db7cddcb935516ebf5ad1583aa0b57d042116f.png" src="../_images/905cd7f94d8a29c1d124031001db7cddcb935516ebf5ad1583aa0b57d042116f.png" />
 </div>
 </div>
 <p>Usually we want to hide the most common value so below we construct an opacity map that accomplishes this.</p>
@@ -494,7 +496,7 @@ Before we adjust the opacity map of the TF, we get a histogram to help us determ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7191fd7c490c8f5163acf3c5c1a2f5e8df20510f3cf6cbe80ce63eb3c64b612.png" src="../_images/b7191fd7c490c8f5163acf3c5c1a2f5e8df20510f3cf6cbe80ce63eb3c64b612.png" />
+<img alt="../_images/6cf016623dad0352a2172ad5e27b083b2da3affc9ebdafb6000cfb819b440720.png" src="../_images/6cf016623dad0352a2172ad5e27b083b2da3affc9ebdafb6000cfb819b440720.png" />
 </div>
 </div>
 <p>Now we apply the map to the transfer function</p>
@@ -510,7 +512,7 @@ Before we adjust the opacity map of the TF, we get a histogram to help us determ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a99e7785df071fdca34f57b23ada7010809ad4a6cb9f89e8da31b32e5452f654.png" src="../_images/a99e7785df071fdca34f57b23ada7010809ad4a6cb9f89e8da31b32e5452f654.png" />
+<img alt="../_images/f02b6d0d178a21825be3cf08b0ff91839c1eb28a35fd45460f672f6974d1d4b9.png" src="../_images/f02b6d0d178a21825be3cf08b0ff91839c1eb28a35fd45460f672f6974d1d4b9.png" />
 </div>
 </div>
 <p>You can adjust the colormap in a similar fashion. Use <code class="docutils literal notranslate"><span class="pre">help(tf)</span></code> for more information.
@@ -526,7 +528,7 @@ Vapor includes a list of built-in colormaps and these can be applied with <code 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9e0aad32a7f67d201b97538801082c6021185e88a5f12b8e143ef3370b1bb416.png" src="../_images/9e0aad32a7f67d201b97538801082c6021185e88a5f12b8e143ef3370b1bb416.png" />
+<img alt="../_images/371258180423b8c73e269632cd3960d7fc808da03423d8fbcd0feece715a8d07.png" src="../_images/371258180423b8c73e269632cd3960d7fc808da03423d8fbcd0feece715a8d07.png" />
 </div>
 </div>
 </section>
@@ -550,139 +552,139 @@ Vapor includes a list of built-in colormaps and these can be applied with <code 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Highlighting/topo
 </pre></div>
 </div>
-<img alt="../_images/6b974b7eefe2bb929945df70bcf142b70b163c08651a14b626539aca86be502b.png" src="../_images/6b974b7eefe2bb929945df70bcf142b70b163c08651a14b626539aca86be502b.png" />
+<img alt="../_images/2de348c7073f771bb68ecb6328ea505df7d469a014256820bd37d02814ba0539.png" src="../_images/2de348c7073f771bb68ecb6328ea505df7d469a014256820bd37d02814ba0539.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Highlighting/oxy
 </pre></div>
 </div>
-<img alt="../_images/0185659624893a6c60432010b08fcad95991266fdbdfa3fc7ebf54abeb7ab35f.png" src="../_images/0185659624893a6c60432010b08fcad95991266fdbdfa3fc7ebf54abeb7ab35f.png" />
+<img alt="../_images/dc099f5098b7c84a7f51f2931ee862ecf5bb082833eba9ea01ebd6521bb50576.png" src="../_images/dc099f5098b7c84a7f51f2931ee862ecf5bb082833eba9ea01ebd6521bb50576.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/tarn
 </pre></div>
 </div>
-<img alt="../_images/f063f27e0160fcaf6706ed7f0e05a5399db1556a0c04205303b16ccba6e3ac1d.png" src="../_images/f063f27e0160fcaf6706ed7f0e05a5399db1556a0c04205303b16ccba6e3ac1d.png" />
+<img alt="../_images/9bf3c864cab6974eb0d38b095a0c06d6c4b1098eb57545d38335ed18fe1390d3.png" src="../_images/9bf3c864cab6974eb0d38b095a0c06d6c4b1098eb57545d38335ed18fe1390d3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/curl
 </pre></div>
 </div>
-<img alt="../_images/a253968331f1494c900605ce41c4559341d0ec9340db7f50d244d710ca09aa84.png" src="../_images/a253968331f1494c900605ce41c4559341d0ec9340db7f50d244d710ca09aa84.png" />
+<img alt="../_images/6749599cd32621aaddbd63d7d97e3f2c68f1f06cc1f03be71104d993ec5bfe95.png" src="../_images/6749599cd32621aaddbd63d7d97e3f2c68f1f06cc1f03be71104d993ec5bfe95.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/CoolWarmSmooth
 </pre></div>
 </div>
-<img alt="../_images/404576a499c96426d82008be790950acd410bd71be5258241b48fc0a1073f3f5.png" src="../_images/404576a499c96426d82008be790950acd410bd71be5258241b48fc0a1073f3f5.png" />
+<img alt="../_images/4c32b1e632d982d3e5d126eb2a9823ca7c514a2524f6c9f5169743c8fd2af46d.png" src="../_images/4c32b1e632d982d3e5d126eb2a9823ca7c514a2524f6c9f5169743c8fd2af46d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/PurpleWhiteOrange
 </pre></div>
 </div>
-<img alt="../_images/d593c54c9af6f18410f56c56d270e3afda7482479b5ebd49772bfd716f8a237f.png" src="../_images/d593c54c9af6f18410f56c56d270e3afda7482479b5ebd49772bfd716f8a237f.png" />
+<img alt="../_images/87a2bf29e20f83da7a1a9e23c2c32ee78ae0f53ba7963c658160ff378111db7c.png" src="../_images/87a2bf29e20f83da7a1a9e23c2c32ee78ae0f53ba7963c658160ff378111db7c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/diff
 </pre></div>
 </div>
-<img alt="../_images/cf52bc63e268a3505a070729c05d7d12e5ca563464fc7599bf12b7d2a2e4fce3.png" src="../_images/cf52bc63e268a3505a070729c05d7d12e5ca563464fc7599bf12b7d2a2e4fce3.png" />
+<img alt="../_images/105d4ca01860cf8cac8e112819f8bb1770ac1076aed1c9d487e3e648545a3506.png" src="../_images/105d4ca01860cf8cac8e112819f8bb1770ac1076aed1c9d487e3e648545a3506.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/GreenWhiteRed
 </pre></div>
 </div>
-<img alt="../_images/d1233391a458b9ef573fef05693ddfa93cd4363e0393213347827bd66ec78663.png" src="../_images/d1233391a458b9ef573fef05693ddfa93cd4363e0393213347827bd66ec78663.png" />
+<img alt="../_images/1a407fd4720c230f42d5e9de26af3f178fae3bbc2601da840687137587cbec3b.png" src="../_images/1a407fd4720c230f42d5e9de26af3f178fae3bbc2601da840687137587cbec3b.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/CoolWarmBent
 </pre></div>
 </div>
-<img alt="../_images/da7b075b2491daea08671d513df2e2ead11846c6b954f08d606e9dfe24f44459.png" src="../_images/da7b075b2491daea08671d513df2e2ead11846c6b954f08d606e9dfe24f44459.png" />
+<img alt="../_images/0703c263c3ec3a938b90a4e7a3ac4c6557aa786a45ae148d028da8cc0e66a8c2.png" src="../_images/0703c263c3ec3a938b90a4e7a3ac4c6557aa786a45ae148d028da8cc0e66a8c2.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/BlueWhiteGold
 </pre></div>
 </div>
-<img alt="../_images/8940709aa905b893b83fb8e7adbefe62271f0736913bb9550f88b20d7596a813.png" src="../_images/8940709aa905b893b83fb8e7adbefe62271f0736913bb9550f88b20d7596a813.png" />
+<img alt="../_images/eb3436af9d170d6730671c915750119314bdc1560dfa7a006f514a9c02b737a6.png" src="../_images/eb3436af9d170d6730671c915750119314bdc1560dfa7a006f514a9c02b737a6.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/CoolWarm
 </pre></div>
 </div>
-<img alt="../_images/f496790457f502ee84c3dea8b4c1231d2a8d5df553045df38972ceedb4287dfb.png" src="../_images/f496790457f502ee84c3dea8b4c1231d2a8d5df553045df38972ceedb4287dfb.png" />
+<img alt="../_images/da5c80c9bca295f41a71550f48e2cf4295b057686bbb595af758be7918cff510.png" src="../_images/da5c80c9bca295f41a71550f48e2cf4295b057686bbb595af758be7918cff510.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/GreenWhitePurple
 </pre></div>
 </div>
-<img alt="../_images/6161270fd700a5920690a64fc4bb81f2959356d62172fa6c662b3383d5d6163a.png" src="../_images/6161270fd700a5920690a64fc4bb81f2959356d62172fa6c662b3383d5d6163a.png" />
+<img alt="../_images/5476f493bd335a5c622495e67712196d08d72b1daa72fb71ef8c4329b88a8241.png" src="../_images/5476f493bd335a5c622495e67712196d08d72b1daa72fb71ef8c4329b88a8241.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/balance
 </pre></div>
 </div>
-<img alt="../_images/d5866d369466ce27ce73b51966cb0e3731102d573faada7e6dccae1aba46a80d.png" src="../_images/d5866d369466ce27ce73b51966cb0e3731102d573faada7e6dccae1aba46a80d.png" />
+<img alt="../_images/fc8d317de82f5dd9fc43a9d0bdb1d8fc0625ace8fc6c7e88b30aff8311869a5c.png" src="../_images/fc8d317de82f5dd9fc43a9d0bdb1d8fc0625ace8fc6c7e88b30aff8311869a5c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Diverging/delta
 </pre></div>
 </div>
-<img alt="../_images/7c61f042a38b06054c49f3e0ee4ac7dde823916fc9df270146682eb31fef5209.png" src="../_images/7c61f042a38b06054c49f3e0ee4ac7dde823916fc9df270146682eb31fef5209.png" />
+<img alt="../_images/15acac4a171e99d2031b44c14adeeaad91ff803d72300520325bee16c1af09ee.png" src="../_images/15acac4a171e99d2031b44c14adeeaad91ff803d72300520325bee16c1af09ee.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/BlackBody
 </pre></div>
 </div>
-<img alt="../_images/15b6d0f95d7a31f1cd966b17dd068ad960e72a4e1feb57a161aed19392cd6690.png" src="../_images/15b6d0f95d7a31f1cd966b17dd068ad960e72a4e1feb57a161aed19392cd6690.png" />
+<img alt="../_images/bb2655677498206feb51151b6702f7de3181037f1d5e614dbb858f9995cd828e.png" src="../_images/bb2655677498206feb51151b6702f7de3181037f1d5e614dbb858f9995cd828e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/thermal
 </pre></div>
 </div>
-<img alt="../_images/3137abe91fb7140eb48d0bfc837557b9eb69285a669a614802dd803f932882d8.png" src="../_images/3137abe91fb7140eb48d0bfc837557b9eb69285a669a614802dd803f932882d8.png" />
+<img alt="../_images/cd8523c549b6d04358ac216ab9f9624ae0cfdd54eb7b4c5de2e7fae39f8dd45a.png" src="../_images/cd8523c549b6d04358ac216ab9f9624ae0cfdd54eb7b4c5de2e7fae39f8dd45a.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/tempo
 </pre></div>
 </div>
-<img alt="../_images/484ee4f8cafd4dca49b955c2564360ab508815b9c72f97d3062b97617bd31b5d.png" src="../_images/484ee4f8cafd4dca49b955c2564360ab508815b9c72f97d3062b97617bd31b5d.png" />
+<img alt="../_images/dd074c5197451b5d7b6e79861ec25bbe48715d64a49eb60e60181c618b770a58.png" src="../_images/dd074c5197451b5d7b6e79861ec25bbe48715d64a49eb60e60181c618b770a58.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/speed
 </pre></div>
 </div>
-<img alt="../_images/1cdd77086e340fc2ee3ab0097e918a21f1b6750eb4d8649bf1641b923761e2e8.png" src="../_images/1cdd77086e340fc2ee3ab0097e918a21f1b6750eb4d8649bf1641b923761e2e8.png" />
+<img alt="../_images/5e96dc7196296e1502f58a8a0c3e682f9dba566704c66f19daf84773baae9eb8.png" src="../_images/5e96dc7196296e1502f58a8a0c3e682f9dba566704c66f19daf84773baae9eb8.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/Kindlmann
 </pre></div>
 </div>
-<img alt="../_images/2328f1878b7006757ecce8a2f3f109d4f3c91897ae14f390dd6011e7e0d34ff6.png" src="../_images/2328f1878b7006757ecce8a2f3f109d4f3c91897ae14f390dd6011e7e0d34ff6.png" />
+<img alt="../_images/48e208cf3a9215647b6fbea6335e21f648477eba5d4f982f6632001d5a243ae0.png" src="../_images/48e208cf3a9215647b6fbea6335e21f648477eba5d4f982f6632001d5a243ae0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/KindlmannExtended
 </pre></div>
 </div>
-<img alt="../_images/f1f58f4ad28d90c3d0f50f51fb48bd47b6f92c01fd40733f4a1abd5ec8e3f928.png" src="../_images/f1f58f4ad28d90c3d0f50f51fb48bd47b6f92c01fd40733f4a1abd5ec8e3f928.png" />
+<img alt="../_images/ab96b5dd630c1160408f85e565231f2ec5a2693da7de5dd7f8fa3fa5d7598ea3.png" src="../_images/ab96b5dd630c1160408f85e565231f2ec5a2693da7de5dd7f8fa3fa5d7598ea3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/algae
 </pre></div>
 </div>
-<img alt="../_images/e568e35fa14bf565795710fbbd4495c0efec73cd5891d385604199c986c85876.png" src="../_images/e568e35fa14bf565795710fbbd4495c0efec73cd5891d385604199c986c85876.png" />
+<img alt="../_images/1d1fac1750bee813c62165810db7f851132100d1f13fe46238a639c12d2668aa.png" src="../_images/1d1fac1750bee813c62165810db7f851132100d1f13fe46238a639c12d2668aa.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/deep
 </pre></div>
 </div>
-<img alt="../_images/d12004b3f2e89283ae9f21a302711bd92c4d20b5c9ab549ad702f6b094f1761c.png" src="../_images/d12004b3f2e89283ae9f21a302711bd92c4d20b5c9ab549ad702f6b094f1761c.png" />
+<img alt="../_images/e8ff726d8ed9ff38656d0cb46ba18123b192bdd6c09ef05cb3c5df39497bd39b.png" src="../_images/e8ff726d8ed9ff38656d0cb46ba18123b192bdd6c09ef05cb3c5df39497bd39b.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/haline
 </pre></div>
 </div>
-<img alt="../_images/7869fd55b46c668c0861d930238ac46f7ad55053830c3f52347b7387b6802a37.png" src="../_images/7869fd55b46c668c0861d930238ac46f7ad55053830c3f52347b7387b6802a37.png" />
+<img alt="../_images/3de754c242d8150288cc01743f3589183c8fc29248a8b95e26722efa4bb7987e.png" src="../_images/3de754c242d8150288cc01743f3589183c8fc29248a8b95e26722efa4bb7987e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/turbid
 </pre></div>
 </div>
-<img alt="../_images/c0c2860b0168d387fdb9650ff59f795a839a8d33ddf8a9afeef612f168edcf35.png" src="../_images/c0c2860b0168d387fdb9650ff59f795a839a8d33ddf8a9afeef612f168edcf35.png" />
+<img alt="../_images/04cbb5e16f7e4ee60a83de7bb82042defd6bfa6542906fa1721bdbab40d2e836.png" src="../_images/04cbb5e16f7e4ee60a83de7bb82042defd6bfa6542906fa1721bdbab40d2e836.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/rain
 </pre></div>
 </div>
-<img alt="../_images/10751c42c7ef1399ae2767e95482197a7a9f5f6c77116275b0e9c092f54e330b.png" src="../_images/10751c42c7ef1399ae2767e95482197a7a9f5f6c77116275b0e9c092f54e330b.png" />
+<img alt="../_images/e153d813e88eedb46c1ee55797939f54ed4e89daeb03b7d229c6db57e7b3f7eb.png" src="../_images/e153d813e88eedb46c1ee55797939f54ed4e89daeb03b7d229c6db57e7b3f7eb.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/Rainbow
 </pre></div>
 </div>
-<img alt="../_images/4fbdae4a11ed3a6309a99520d556ef76dcb7d411b09abfda79cb49d632f4684f.png" src="../_images/4fbdae4a11ed3a6309a99520d556ef76dcb7d411b09abfda79cb49d632f4684f.png" />
+<img alt="../_images/45e125d7a4961f0cad6c388b83bea76b89284d3f01603135e7d98ff73208e2e1.png" src="../_images/45e125d7a4961f0cad6c388b83bea76b89284d3f01603135e7d98ff73208e2e1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/phase
 </pre></div>
 </div>
-<img alt="../_images/ec47d34e74c2812bb1b0a29b4dfc1bb9341c960214f54ec9e8c7ccdc19b475d0.png" src="../_images/ec47d34e74c2812bb1b0a29b4dfc1bb9341c960214f54ec9e8c7ccdc19b475d0.png" />
+<img alt="../_images/5466cb2090e2ed0e81c8af12e7135a5bc575d24df50efbda15f3bff0638386ca.png" src="../_images/5466cb2090e2ed0e81c8af12e7135a5bc575d24df50efbda15f3bff0638386ca.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/BlackBodyExtended
 </pre></div>
 </div>
-<img alt="../_images/2be121a98d68a32757e9815b235f24694518f079538074bff4f09161520320c4.png" src="../_images/2be121a98d68a32757e9815b235f24694518f079538074bff4f09161520320c4.png" />
+<img alt="../_images/52f208d0933198fb67905c36f1b6d0192bd164a90a18aa9962227bb885be6d8f.png" src="../_images/52f208d0933198fb67905c36f1b6d0192bd164a90a18aa9962227bb885be6d8f.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/dense
 </pre></div>
 </div>
-<img alt="../_images/60da62d72e02350ce586ace93807801917526caffdff7ccb9a7bfab9a8cd9dd1.png" src="../_images/60da62d72e02350ce586ace93807801917526caffdff7ccb9a7bfab9a8cd9dd1.png" />
+<img alt="../_images/e3e918129f0daf8fb95a3a1dd04b9075e48466c77491f23f5a82d56b1bcf05f1.png" src="../_images/e3e918129f0daf8fb95a3a1dd04b9075e48466c77491f23f5a82d56b1bcf05f1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/amp
 </pre></div>
 </div>
-<img alt="../_images/c0fe58598ba82e38a00a03159b7b445e180087e82ee7d49c1e9a6249327dc2ca.png" src="../_images/c0fe58598ba82e38a00a03159b7b445e180087e82ee7d49c1e9a6249327dc2ca.png" />
+<img alt="../_images/71343c4254a0420a6ec0cb0385e04e5a1b904236c90ca7ce6d402b74709156e1.png" src="../_images/71343c4254a0420a6ec0cb0385e04e5a1b904236c90ca7ce6d402b74709156e1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/ice
 </pre></div>
 </div>
-<img alt="../_images/7d9d584287392e88ecb18c9aeabdb4993c8051413b125159fe264e67a357e3d5.png" src="../_images/7d9d584287392e88ecb18c9aeabdb4993c8051413b125159fe264e67a357e3d5.png" />
+<img alt="../_images/5685411214fa4a81bf7bc984d92aa3a8705972a53ba2a49b9c8fc4789f0a6e9a.png" src="../_images/5685411214fa4a81bf7bc984d92aa3a8705972a53ba2a49b9c8fc4789f0a6e9a.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/matter
 </pre></div>
 </div>
-<img alt="../_images/4bdfbe5aef5b19258e743865c9544ddd8c2535db0391495f73d88b62baf367d0.png" src="../_images/4bdfbe5aef5b19258e743865c9544ddd8c2535db0391495f73d88b62baf367d0.png" />
+<img alt="../_images/7ff1b067c7f1db2774bc8a7ee9e7cdbd2a53a18dcc8a1fd82563865be29d1611.png" src="../_images/7ff1b067c7f1db2774bc8a7ee9e7cdbd2a53a18dcc8a1fd82563865be29d1611.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/BlackWhite
 </pre></div>
 </div>
-<img alt="../_images/e760eb99826e781338474c1870cb287a8398d61acd2126ce2afd91165925309d.png" src="../_images/e760eb99826e781338474c1870cb287a8398d61acd2126ce2afd91165925309d.png" />
+<img alt="../_images/21321d85c64534b088865128b247a8ccb5c95ccceb4273d80d8d2a7846a8ad70.png" src="../_images/21321d85c64534b088865128b247a8ccb5c95ccceb4273d80d8d2a7846a8ad70.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sequential/solar
 </pre></div>
 </div>
-<img alt="../_images/866a60d9bede2f44818a917f4fce41e7c482ecd5ca638ae47940a6dc582eba0f.png" src="../_images/866a60d9bede2f44818a917f4fce41e7c482ecd5ca638ae47940a6dc582eba0f.png" />
+<img alt="../_images/84b4b029bd27be47d66d1015a47a96088e885504929b9ba011eb151e9c2c0f3a.png" src="../_images/84b4b029bd27be47d66d1015a47a96088e885504929b9ba011eb151e9c2c0f3a.png" />
 </div>
 </div>
 </section>
@@ -943,16 +945,24 @@ Vapor includes a list of built-in colormaps and these can be applied with <code 
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -990,7 +1000,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 18 February 2025.
+  Last updated on 12 May 2025.
   <br/>
 </p>
   </div>
@@ -1007,8 +1017,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
      
@@ -1044,7 +1054,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 18 February 2025.
+          Last updated on 12 May 2025.
         </p>
       </div>
     </div>
