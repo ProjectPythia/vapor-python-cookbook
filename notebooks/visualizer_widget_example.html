@@ -82,7 +82,7 @@
     <link rel="prev" title="Advecting Flow Paths" href="flow_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="12 May 2025"/>
+    <meta name="docbuild:last-update" content="13 May 2025"/>
   </head>
   
   
@@ -432,6 +432,7 @@ This notebook shows how to use visualizer widgets and how to add additional dyna
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">example_utils</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">vapor</span><span class="w"> </span><span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">widget</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
 
 <span class="n">ses</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">example_utils</span><span class="o">.</span><span class="n">OpenExampleDataset</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
@@ -479,7 +480,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d9365f4f872e4fbba3fad7e8be0a2268", "version_major": 2, "version_minor": 1}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f69cd1f95e7042bd9ab664f26a8f57a4", "version_major": 2, "version_minor": 1}</script></div>
 </div>
 </section>
 <section id="add-an-interactive-iso-value-slider-using-ipywidgets">
@@ -504,22 +505,7 @@ Hover over the visualizer to see the full controls.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ren</span><span class="o">.</span><span class="n">SetIsoValues</span><span class="p">([</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">viz</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">fast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">ren</span><span class="o">.</span><span class="n">GetIsoValues</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">min</span><span class="o">=</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">max</span><span class="o">=</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="p">(</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">dataRange</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">sliderChanged</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">viz</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">&quot;Iso value:&quot;</span><span class="p">),</span> <span class="n">slider</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;widgets&#39; is not defined
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b778e747b3b54efabee5dbe66666e3da", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -834,7 +820,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12 May 2025.
+  Last updated on 13 May 2025.
   <br/>
 </p>
   </div>
@@ -888,7 +874,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 12 May 2025.
+          Last updated on 13 May 2025.
         </p>
       </div>
     </div>
