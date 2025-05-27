@@ -1,0 +1,29 @@
+format: jb-book
+root: README
+parts:
+  - caption: Preamble
+    chapters:
+      - file: notebooks/how-to-cite
+  - caption: Quickstart Guide
+    chapters:
+      - file: notebooks/quickstart
+
+  - caption: Foundations of VAPOR Python
+    chapters:
+      - file: notebooks/dataset_example
+      - file: notebooks/numpy_example
+      - file: notebooks/xarray_example
+      - file: notebooks/camera_example
+      - file: notebooks/transfer_function_example
+      - file: notebooks/annotation_example
+      - file: notebooks/animation_example
+      - file: notebooks/keyframing_example
+      - file: notebooks/flow_example
+      - file: notebooks/visualizer_widget_example
+      - file: notebooks/custom_images_example
+
+  - caption: Example workflows
+    chapters:
+      - file: notebooks/AGU_2023_example
+      - file: notebooks/workflow_example
+      - file: notebooks/cloudfield_visualizer
