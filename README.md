@@ -3,7 +3,6 @@
 # VAPOR Python Cookbook
 
 [![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/vapor-python-cookbook/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/vapor-python-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/656355302.svg)](https://zenodo.org/badge/latestdoi/656355302)
 
 This Project Pythia Cookbook provides an overview of the VAPOR Python API with example workflows. 
