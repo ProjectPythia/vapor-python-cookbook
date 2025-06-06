@@ -17,7 +17,7 @@ The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researc
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythia/vapor-cookbook/graphs/contributors">
+<a href="https://github.com/ProjectPythia/vapor-python-cookbook/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ProjectPythia/vapor-python-cookbook" />
 </a>
 
