@@ -4,7 +4,11 @@ extends:
 project:
   title: VAPOR Python Cookbook
   authors:
-    - name: the <a href="https://projectpythia.org/">Project Pythia</a> Community
+    # - name: the <a href="https://projectpythia.org/">Project Pythia</a> Community
+    - name: Project Pythia Community
+      url: https://projectpythia.org/
+  github: https://github.com/projectpythia-mystmd/vapor-python-cookbook
+
   copyright: '2024'
   toc:
     - file: README.md
