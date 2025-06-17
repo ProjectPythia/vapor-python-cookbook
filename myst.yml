@@ -1,13 +1,13 @@
 version: 1
 extends:
-  - https://raw.githubusercontent.com/projectpythia-mystmd/pythia-config/main/pythia.yml
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
 project:
   title: VAPOR Python Cookbook
   authors:
     # - name: the <a href="https://projectpythia.org/">Project Pythia</a> Community
     - name: Project Pythia Community
       url: https://projectpythia.org/
-  github: https://github.com/projectpythia-mystmd/vapor-python-cookbook
+  github: https://github.com/projectpythia/vapor-python-cookbook
 
   copyright: '2024'
   toc:
@@ -38,7 +38,7 @@ project:
         - file: notebooks/cloudfield_visualizer.ipynb
   jupyter:
       binder:
-        repo: projectpythia-mystmd/vapor-python-cookbook
+        repo: projectpythia/vapor-python-cookbook
 site:
   options:
     logo: notebooks/images/logos/pythia_logo-white-rtext.svg
