@@ -2,7 +2,7 @@
 
 # VAPOR Python Cookbook
 
-[![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
+[![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/vapor-python-cookbook/actions/workflows/nightly-build.yaml)
 [![DOI](https://zenodo.org/badge/656355302.svg)](https://zenodo.org/badge/latestdoi/656355302)
 
 This Project Pythia Cookbook provides an overview of the VAPOR Python API with example workflows. 
@@ -17,13 +17,8 @@ The Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researc
 
 ### Contributors
 
-<a href="https://github.com/NCAR/VAPOR/graphs/contributors">
-  <img src="https://github.com/StasJ.png" width="8%" style="border-radius: 50%" />
-  <img src="https://github.com/sgpearse.png" width="8%" style="border-radius: 50%" />
-  <img src="https://github.com/shaomeng.png" width="8%" style="border-radius: 50%" />
-  <img src="https://github.com/clyne.png" width="8%" style="border-radius: 50%" />
-  <img src="https://github.com/NihanthCW.png" width="8%" style="border-radius: 50%" />
-  <img src="https://github.com/ifranda.png" width="8%" style="border-radius: 50%" />
+<a href="https://github.com/ProjectPythia/vapor-python-cookbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ProjectPythia/vapor-python-cookbook" />
 </a>
 
 ## Structure
