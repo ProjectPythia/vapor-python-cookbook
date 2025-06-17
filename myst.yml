@@ -39,8 +39,3 @@ project:
   jupyter:
       binder:
         repo: projectpythia/vapor-python-cookbook
-site:
-  options:
-    logo: notebooks/images/logos/pythia_logo-white-rtext.svg
-    folders: true
-  template: book-theme
