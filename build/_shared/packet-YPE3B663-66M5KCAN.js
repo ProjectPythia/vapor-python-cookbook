@@ -1,0 +1,1 @@
+import{a as e,b as r}from"/vapor-python-cookbook/build/_shared/chunk-IMEQYZY3.js";import"/vapor-python-cookbook/build/_shared/chunk-GEZIJWLJ.js";import"/vapor-python-cookbook/build/_shared/chunk-RAQ24GF6.js";export{e as PacketModule,r as createPacketServices};
