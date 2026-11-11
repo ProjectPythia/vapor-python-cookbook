@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="http://pre.render/sitemap_style.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000</loc>
+    <loc>http://pre.render</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/how-to-cite</loc>
+    <loc>http://pre.render/notebooks/how-to-cite</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/quickstart</loc>
+    <loc>http://pre.render/notebooks/quickstart</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/dataset-example</loc>
+    <loc>http://pre.render/notebooks/dataset-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/numpy-example</loc>
+    <loc>http://pre.render/notebooks/numpy-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/xarray-example</loc>
+    <loc>http://pre.render/notebooks/xarray-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/camera-example</loc>
+    <loc>http://pre.render/notebooks/camera-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/transfer-function-example</loc>
+    <loc>http://pre.render/notebooks/transfer-function-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/annotation-example</loc>
+    <loc>http://pre.render/notebooks/annotation-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/animation-example</loc>
+    <loc>http://pre.render/notebooks/animation-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/keyframing-example</loc>
+    <loc>http://pre.render/notebooks/keyframing-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/flow-example</loc>
+    <loc>http://pre.render/notebooks/flow-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/visualizer-widget-example</loc>
+    <loc>http://pre.render/notebooks/visualizer-widget-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/custom-images-example</loc>
+    <loc>http://pre.render/notebooks/custom-images-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/agu-2023-example</loc>
+    <loc>http://pre.render/notebooks/agu-2023-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/workflow-example</loc>
+    <loc>http://pre.render/notebooks/workflow-example</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/cloudfield-visualizer</loc>
+    <loc>http://pre.render/notebooks/cloudfield-visualizer</loc>
   </url>
 </urlset>
